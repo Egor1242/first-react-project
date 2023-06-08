@@ -1,0 +1,1 @@
+export {GoogleMapCustom} from "./GoogleMapCustom"
