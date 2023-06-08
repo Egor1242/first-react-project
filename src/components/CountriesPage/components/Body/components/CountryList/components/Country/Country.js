@@ -30,6 +30,9 @@ export const Country = ({ country, setCurrentPage }) => {
                 <div className="country__languages">
                     Timezone: <span>{country?.timezones.length > 0 && country?.timezones[0]}</span>
                 </div>
+                <div className="country__independent">
+                    Independence: <span>{country?.independent ? "Independent" : "Dependent"}</span>
+                </div>
             </div>
         </div>
     )

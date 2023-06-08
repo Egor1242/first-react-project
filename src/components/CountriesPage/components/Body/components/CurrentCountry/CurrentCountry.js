@@ -4,7 +4,7 @@ import { placeCurrenciesIntoHtml } from "../../../../../../utility/placeCurrenci
 
 import "./style.css"
 
-export const CurrentCountry = ({ currentCountry, setCurrentPage }) => {
+export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
 
 
     console.log(currentCountry?.maps?.googleMaps);
@@ -46,6 +46,9 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage }) => {
                             </div>
                             <div className="current-country__languages">
                                 Timezone: <span>{currentCountry?.timezones.length > 0 && currentCountry?.timezones[0]}</span>
+                            </div>
+                            <div className="current-country__independent">
+                                Independence: <span>{currentCountry?.independent ? "Independent" : "Dependent"}</span>
                             </div>
                         </div>
                     </div>
