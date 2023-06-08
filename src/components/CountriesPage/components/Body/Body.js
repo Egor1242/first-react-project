@@ -4,7 +4,7 @@ import { CurrentCountry } from "./components/CurrentCountry/CurrentCountry"
 
 export const Body = ({ countries }) => {
 
-    const [currentPage, setCurrentPage] = useState("Main")
+    const [currentPage, setCurrentPage] = useState("Main");
 
     return (
         <div className="main-page__body">
