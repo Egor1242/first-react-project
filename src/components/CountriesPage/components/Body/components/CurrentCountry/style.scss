@@ -52,8 +52,9 @@
     .flags {
         display: flex;
         justify-content: start;
-        width: 100%;
+        width: 335px;
         height: 200px;
+        //overflow: hidden;
         
 
         .flag {
@@ -64,6 +65,10 @@
             img {
                 height: 100%;
             }
+
+            .flag-img{
+                width: 105%;
+            }
         }
 
         .Coat-of-Arms{
@@ -71,7 +76,7 @@
             aspect-ratio: 1/1;
 
             img {
-                width: 100%;
+                width: 80%;
                 height: 100%;
             }
         }

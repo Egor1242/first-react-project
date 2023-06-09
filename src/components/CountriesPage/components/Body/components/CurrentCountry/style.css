@@ -63,7 +63,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  width: 100%;
+  width: 335px;
   height: 200px;
 }
 
@@ -77,13 +77,17 @@
   height: 100%;
 }
 
+.current-country .flags .flag .flag-img {
+  width: 105%;
+}
+
 .current-country .flags .Coat-of-Arms {
   height: 100%;
   aspect-ratio: 1/1;
 }
 
 .current-country .flags .Coat-of-Arms img {
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 

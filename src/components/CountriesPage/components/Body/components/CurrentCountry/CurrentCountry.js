@@ -56,7 +56,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         <div className="current-country__map">
                             <div className="map-frame">
                                 <iframe
-                                    src={currentCountry?.maps?.googleMaps + "&embedded=true"}
+                                    src={currentCountry?.maps?.openStreetMaps}
                                     width="100%" height="450" loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"></iframe>
                             </div>
