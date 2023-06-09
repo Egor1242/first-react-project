@@ -1,13 +1,10 @@
 import { placeLanguagesIntoHtml } from "../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../utility/placeCurrenciesIntoHtml"
-
+import { GoogleMapCustom } from "../../../../../GoogleMap/GoogleMapCustom";
 
 import "./style.css"
 
 export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
-
-
-    console.log(currentCountry?.maps?.googleMaps);
 
     return (
         <>
@@ -53,14 +50,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         </div>
                     </div>
                     <div className="right-section">
-                        <div className="current-country__map">
-                            <div className="map-frame">
-                                <iframe
-                                    src={currentCountry?.maps?.openStreetMaps}
-                                    width="100%" height="450" loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
+                        <GoogleMapCustom currentCountry={currentCountry.common} />
                     </div>
                 </div>
             </div>
