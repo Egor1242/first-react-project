@@ -1,10 +1,18 @@
 import { placeLanguagesIntoHtml } from "../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../utility/placeCurrenciesIntoHtml"
-import { GoogleMapCustom } from "../../../../../GoogleMap/GoogleMapCustom";
+import { GoogleMapCustom } from "../../../../../../components/GoogleMap"
 
 import "./style.css"
 
 export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
+
+    let currentZoom;
+
+    if(currentCountry?.area < 1000) currentZoom = 10
+    else if( currentCountry?.area >= 1000 && currentCountry?.area < 10000) currentZoom = 8
+    else if(currentCountry?.area >= 10000 && currentCountry?.area < 100000) currentZoom = 6
+    else if(currentCountry?.area >= 100000 && currentCountry?.area < 1000000) currentZoom = 5
+    else currentZoom = 2
 
     return (
         <>
@@ -50,7 +58,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         </div>
                     </div>
                     <div className="right-section">
-                        <GoogleMapCustom currentCountry={currentCountry.common} />
+                        <GoogleMapCustom currentZoom={currentZoom} currentCountry={currentCountry?.name?.official} />
                     </div>
                 </div>
             </div>

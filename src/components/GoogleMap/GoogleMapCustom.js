@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import axios from 'axios';
 
-const API_KEY = "AIzaSyDODSOC-dpC2etQQT21djdkxOc5v4BAvHs";
+const API_KEY = "AIzaSyAKlLoPezczIJIEvV9Cv7AEyLHqixRKpiY";
 
-export const GoogleMapCustom = ({ currentCountry }) => {
+export const GoogleMapCustom = ({currentZoom, currentCountry }) => {
 
     const containerStyle = {
         width: '100%',
-        height: '400px',
+        height: '100%',
     };
 
     const [center, setCenter] = useState({ lat: 0, lng: 0 });
@@ -37,7 +37,7 @@ export const GoogleMapCustom = ({ currentCountry }) => {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={4}
+                zoom={currentZoom}
             />
         </LoadScript>
     );

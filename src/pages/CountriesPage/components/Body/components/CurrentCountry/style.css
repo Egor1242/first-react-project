@@ -5,23 +5,19 @@
   text-align: center;
   top: 10vh;
   left: 1.5vw;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 45px;
   width: 70px;
   height: 80vh;
   background-color: rgba(192, 189, 185, 0.492);
-  -webkit-transition: .75s;
-  transition: .75s;
+  transition: 0.75s;
 }
-
 .cancel:hover {
   background-color: rgba(128, 255, 0, 0.489);
 }
 
 .current-country {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 85vw;
   height: 80vh;
   margin: 0 auto;
@@ -29,24 +25,16 @@
   border: 0.75px solid red;
   padding: 5px 15px;
 }
-
 .current-country .sections {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .current-country .left-section {
   width: 45%;
 }
-
 .current-country .right-section {
   width: 48%;
 }
-
 .current-country .current-country__title {
   font-size: 46px;
   text-align: center;
@@ -55,53 +43,39 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
-
 .current-country .flags {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  justify-content: start;
   width: 335px;
   height: 200px;
 }
-
 .current-country .flags .flag {
   height: 100%;
   aspect-ratio: 3/2;
   margin-right: 25px;
 }
-
 .current-country .flags .flag img {
   height: 100%;
 }
-
 .current-country .flags .flag .flag-img {
   width: 105%;
 }
-
 .current-country .flags .Coat-of-Arms {
   height: 100%;
   aspect-ratio: 1/1;
 }
-
 .current-country .flags .Coat-of-Arms img {
   width: 80%;
   height: 100%;
 }
-
 .current-country .current-country-info {
   font-size: 20px;
   margin: 20px 0 0 20px;
 }
-
 .current-country .current-country-info div {
   margin: 5px 0;
 }
-
 .current-country .current-country__map {
   margin: 0 auto;
   border: 1px solid red;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
