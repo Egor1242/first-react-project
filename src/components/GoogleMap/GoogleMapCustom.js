@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import axios from 'axios';
 
-const API_KEY = "AIzaSyAKlLoPezczIJIEvV9Cv7AEyLHqixRKpiY";
+const API_KEY = "AIzaSyBrnUyIwzrlPhGbhwlPP9Z9s4S6nIZoCnQ";
 
 export const GoogleMapCustom = ({currentZoom, currentCountry }) => {
 
@@ -20,9 +20,7 @@ export const GoogleMapCustom = ({currentZoom, currentCountry }) => {
                 const response = await axios.get(
                     `https://maps.googleapis.com/maps/api/geocode/json?address=${currentCountry}&key=${API_KEY}`
                 );
-
-                const { lat, lng } = response?.data?.results[0]?.geometry?.location;
-                    console.log( `lat = ${lat}, lng = ${lng}`)
+                const { lat, lng } = response?.data?.results[0]?.geometry?.location;   
                 setCenter({ lat, lng });
             } catch (error) {
                 console.error('Ошибка при получении координат страны:', error);

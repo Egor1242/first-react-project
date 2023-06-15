@@ -8,7 +8,7 @@ import "./style.css";
 
 export function CountriesPage() {
 
-    const [response, setResponse] = useState({});
+    const [response, setResponse] = useState([]);
 
     const getResponse = () => {
         ApiConnect.sendRequest().then((response) => setResponse(response));
