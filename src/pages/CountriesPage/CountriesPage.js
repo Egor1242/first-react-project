@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
-import { ApiConnect } from '../../services/ApiConnect';
+import React from 'react';
 
 import { Body } from "./components/Body"
 
 import "./style.css";
 
 
-export function CountriesPage() {
+export function CountriesPage({response}) {
 
-    const [response, setResponse] = useState([]);
-
-    const getResponse = () => {
-        ApiConnect.sendRequest().then((response) => setResponse(response));
-    }
-
-    console.log(response);
+    let countries = response?.response;
+    console.log(countries);
 
     return (
         <div className='main-page'>
-            <button className="refresher" onClick={getResponse}>Refresh</button>
-            <Body countries={response.response} />
+            <Body countries={countries} />
         </div>
     )
 }

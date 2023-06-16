@@ -13,7 +13,7 @@ export const Country = ({ country, setCurrentPage }) => {
             </div>
             <div className="country-info">
                 <div className="country__capital">
-                    Capital: {country?.capital}
+                    Capital: {country?.capital || "-"}
                 </div>
                 <div className="country__area">
                     Area: {country?.area} <span className="km-square">km</span>
@@ -22,10 +22,10 @@ export const Country = ({ country, setCurrentPage }) => {
                     Population: {country?.population} citizens.
                 </div>
                 <div className="country__languages">
-                    Languages: <span>{placeLanguagesIntoHtml(country?.languages)}</span>
+                    Languages: <span>{placeLanguagesIntoHtml(country?.languages) || "-"}</span>
                 </div>
                 <div className="country__languages">
-                    Currencies: <span>{placeCurrenciesIntoHtml(country?.currencies)}</span>
+                    Currencies: <span>{placeCurrenciesIntoHtml(country?.currencies) || "-"}</span>
                 </div>
                 <div className="country__languages">
                     Timezone: <span>{country?.timezones.length > 0 && country?.timezones[0]}</span>
