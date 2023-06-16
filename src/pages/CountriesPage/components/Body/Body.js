@@ -6,6 +6,8 @@ export const Body = ({ countries }) => {
 
     const [currentPage, setCurrentPage] = useState("Main");
 
+    console.log(countries);
+
     return (
         <div className="main-page__body">
             {
