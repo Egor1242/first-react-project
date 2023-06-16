@@ -5,7 +5,9 @@
   aspect-ratio: 1/1;
   margin: 1%;
 }
+
 .country .country__title {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
@@ -13,14 +15,17 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
 .country .country-info {
   width: 95%;
   margin: 5px auto;
   text-align: start;
 }
+
 .country .country-info .country__area .km-square {
   position: relative;
 }
+
 .country .country-info .country__area .km-square::before {
   position: absolute;
   content: "2";
@@ -28,12 +33,15 @@
   top: -5px;
   right: -8px;
 }
+
 .country .flag {
   width: 95%;
   aspect-ratio: 3/2;
   margin: 5px auto;
 }
+
 .country .flag .flag-img {
   width: 100%;
   height: 100%;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

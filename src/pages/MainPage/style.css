@@ -1,1 +1,11 @@
+.App {
+  min-height: 100vh;
+  color: white;
+  background-image: url("../../../img/backgrounds/worldMap.jpg");
+  background-attachment: fixed;
+}
+
+.welcomingText {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

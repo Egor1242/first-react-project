@@ -1,7 +1,11 @@
+import "./style.css";
+
 export const MainPage = () =>{
     return(
         <>
-        Приветствую вас на этом прекрасном сайте
+        <div className="welcomingText">
+            Приветствую вас на этом прекрасном сайте
+        </div>
         </>
     )
 }

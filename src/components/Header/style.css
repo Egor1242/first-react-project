@@ -1,11 +1,17 @@
 .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 85%;
   margin: 0 auto;
   height: 10vh;
-  background-color: beige;
+  background-color: rgba(52, 78, 102, 0.8);
 }
+
 .header-wrapper .header {
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

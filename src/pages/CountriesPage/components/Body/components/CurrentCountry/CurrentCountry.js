@@ -11,8 +11,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
     if(currentCountry?.area < 1000) currentZoom = 10
     else if( currentCountry?.area >= 1000 && currentCountry?.area < 10000) currentZoom = 8
     else if(currentCountry?.area >= 10000 && currentCountry?.area < 100000) currentZoom = 6
-    else if(currentCountry?.area >= 100000 && currentCountry?.area <= 1000000) currentZoom = 5
-    else if(currentCountry?.area >= 1000000 && currentCountry?.area <= 10000000) currentZoom = 4
+    else if(currentCountry?.area >= 100000 && currentCountry?.area < 1000000) currentZoom = 5
     else currentZoom = 2
 
     return (
@@ -59,7 +58,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         </div>
                     </div>
                     <div className="right-section">
-                        <GoogleMapCustom currentZoom={currentZoom} currentCenter={currentCountry?.latlng} />
+                        <GoogleMapCustom currentZoom={currentZoom} currentCountry={currentCountry?.name?.official} />
                     </div>
                 </div>
             </div>
