@@ -11,9 +11,11 @@
     height: 80vh;
     background-color: rgba(192, 189, 185, 0.492);
     transition: .75s;
+    border-radius: 10px;
 
     &:hover {
         background-color: rgba(128, 255, 0, 0.489);
+        border-radius: 20px;
     }
 }
 

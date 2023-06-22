@@ -13,10 +13,12 @@
   background-color: rgba(192, 189, 185, 0.492);
   -webkit-transition: .75s;
   transition: .75s;
+  border-radius: 10px;
 }
 
 .cancel:hover {
   background-color: rgba(128, 255, 0, 0.489);
+  border-radius: 20px;
 }
 
 .current-country {

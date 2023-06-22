@@ -1,5 +1,5 @@
-import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLanguagesIntoHtml"
-import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
+import { placeLanguagesIntoHtml } from "../../../../../../../../../../utility/placeLanguagesIntoHtml"
+import { placeCurrenciesIntoHtml } from "../../../../../../../../../../utility/placeCurrenciesIntoHtml"
 
 import "./style.css"
 

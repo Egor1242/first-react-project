@@ -1,6 +1,6 @@
-import { placeLanguagesIntoHtml } from "../../../../../../utility/placeLanguagesIntoHtml"
-import { placeCurrenciesIntoHtml } from "../../../../../../utility/placeCurrenciesIntoHtml"
-import { GoogleMapCustom } from "../../../../../../components/GoogleMap"
+import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLanguagesIntoHtml"
+import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
+import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
 
 import "./style.css"
 
