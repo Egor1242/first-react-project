@@ -35,7 +35,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         </div>
                         <div className="current-country-info">
                             <div className="current-country__capital">
-                                Capital: {currentCountry?.capital}
+                                Capital: {currentCountry?.capital || "-"}
                             </div>
                             <div className="current-country__area">
                                 Area: {currentCountry?.area} <span className="km-square">km</span>
@@ -44,10 +44,10 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                                 Population: {currentCountry?.population} citizens.
                             </div>
                             <div className="current-country__languages">
-                                Languages: <span>{placeLanguagesIntoHtml(currentCountry?.languages)}</span>
+                                Languages: <span>{placeLanguagesIntoHtml(currentCountry?.languages) || "-"}</span>
                             </div>
                             <div className="current-country__languages">
-                                Currencies: <span>{placeCurrenciesIntoHtml(currentCountry?.currencies)}</span>
+                                Currencies: <span>{placeCurrenciesIntoHtml(currentCountry?.currencies) || "-"}</span>
                             </div>
                             <div className="current-country__languages">
                                 Timezone: <span>{currentCountry?.timezones.length > 0 && currentCountry?.timezones[0]}</span>
@@ -58,7 +58,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                         </div>
                     </div>
                     <div className="right-section">
-                        <GoogleMapCustom currentZoom={currentZoom} currentCountry={currentCountry?.name?.official} />
+                        <GoogleMapCustom currentZoom={currentZoom} currentCenter={currentCountry?.latlng} />
                     </div>
                 </div>
             </div>
