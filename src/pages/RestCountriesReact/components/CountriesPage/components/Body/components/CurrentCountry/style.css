@@ -65,8 +65,8 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  width: 335px;
-  height: 200px;
+  width: 20vw;
+  height: 25vh;
 }
 
 .current-country .flags .flag {

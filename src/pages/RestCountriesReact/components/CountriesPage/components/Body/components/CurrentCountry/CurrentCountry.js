@@ -1,5 +1,6 @@
 import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
+import { placeBordersIntoHtml } from "../../../../../../../../utility/placeBordersIntoHtml"
 import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
 
 import "./style.css"
@@ -8,10 +9,10 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
 
     let currentZoom;
 
-    if(currentCountry?.area < 1000) currentZoom = 10
-    else if( currentCountry?.area >= 1000 && currentCountry?.area < 10000) currentZoom = 8
-    else if(currentCountry?.area >= 10000 && currentCountry?.area < 100000) currentZoom = 6
-    else if(currentCountry?.area >= 100000 && currentCountry?.area < 1000000) currentZoom = 5
+    if (currentCountry?.area < 1000) currentZoom = 10
+    else if (currentCountry?.area >= 1000 && currentCountry?.area < 10000) currentZoom = 8
+    else if (currentCountry?.area >= 10000 && currentCountry?.area < 100000) currentZoom = 6
+    else if (currentCountry?.area >= 100000 && currentCountry?.area < 1000000) currentZoom = 5
     else currentZoom = 2
 
     return (
@@ -54,6 +55,9 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                             </div>
                             <div className="current-country__independent">
                                 Independence: <span>{currentCountry?.independent ? "Independent" : "Dependent"}</span>
+                            </div>
+                            <div className="current-country__borders">
+                                Borders: <span>{placeBordersIntoHtml(currentCountry?.borders, setCurrentPage) || "-"}</span>
                             </div>
                         </div>
                     </div>

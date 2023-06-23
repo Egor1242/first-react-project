@@ -10,7 +10,7 @@ export function CountriesPage({countries}) {
     console.log(countries);
 
     return (
-        <div className='main-page'>
+        <div className='countries-page'>
             
             <Body countries={countries} />
         </div>
