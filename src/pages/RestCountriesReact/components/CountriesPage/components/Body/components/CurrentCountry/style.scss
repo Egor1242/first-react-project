@@ -20,12 +20,33 @@
 }
 
 .current-country {
+    position: relative;
+
+    .color-setup{
+        position: absolute;
+
+        
+        button{
+            aspect-ratio: 1/1;
+        }
+        
+        .color-1{
+            background-color: rgba(250, 184, 114, 0.862);
+        }
+        .color-2{
+            background-color: rgba(48, 40, 88, 0.862);
+        }
+        .color-3{
+            background-color: rgba(4, 126, 124, 0.862);
+        }
+    }
     
     box-sizing: border-box;
     width: 85vw;
     height: 80vh;
     margin: 0 auto;
-    background-color: rgba(250, 184, 114, 0.862);
+    //background-color: rgba(250, 184, 114, 0.862);
+    background-color: rgba(4, 126, 124, 0.862);
     border: 0.75px solid red;
     padding: 5px 15px;
 
@@ -50,10 +71,6 @@
         font-weight: bolder;
         text-transform: uppercase;
     }
-
-    //====================================================================
-
-    //====================================================================
 
     .current-country-info{
         width: 55vw;

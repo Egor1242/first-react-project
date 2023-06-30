@@ -5,38 +5,71 @@
   text-align: center;
   top: 10vh;
   left: 1.5vw;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 45px;
   width: 70px;
   height: 80vh;
   background-color: rgba(192, 189, 185, 0.492);
-  transition: 0.75s;
+  -webkit-transition: .75s;
+  transition: .75s;
   border-radius: 10px;
 }
+
 .cancel:hover {
   background-color: rgba(128, 255, 0, 0.489);
   border-radius: 20px;
 }
 
 .current-country {
-  box-sizing: border-box;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 85vw;
   height: 80vh;
   margin: 0 auto;
-  background-color: rgba(250, 184, 114, 0.862);
+  background-color: rgba(4, 126, 124, 0.862);
   border: 0.75px solid red;
   padding: 5px 15px;
 }
-.current-country .sections {
-  display: flex;
-  justify-content: space-between;
+
+.current-country .color-setup {
+  position: absolute;
 }
+
+.current-country .color-setup button {
+  aspect-ratio: 1/1;
+}
+
+.current-country .color-setup .color-1 {
+  background-color: rgba(250, 184, 114, 0.862);
+}
+
+.current-country .color-setup .color-2 {
+  background-color: rgba(48, 40, 88, 0.862);
+}
+
+.current-country .color-setup .color-3 {
+  background-color: rgba(4, 126, 124, 0.862);
+}
+
+.current-country .sections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .current-country .left-section {
   width: 45%;
 }
+
 .current-country .right-section {
   width: 48%;
 }
+
 .current-country .current-country__title {
   font-size: 46px;
   text-align: center;
@@ -45,51 +78,68 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
+
 .current-country .current-country-info {
   width: 55vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 20px;
   margin: 0 0 0 20px;
 }
+
 .current-country .current-country-info div {
   margin: 5px 0;
 }
+
 .current-country .current-country-info .left-info-section {
   width: 27vw;
 }
+
 .current-country .current-country-info .left-info-section .flag-frame {
   height: 26vh;
   aspect-ratio: 7/4;
 }
+
 .current-country .current-country-info .left-info-section .flag-frame .flag-img {
   height: 100%;
   width: 100%;
 }
+
 .current-country .current-country-info .right-info-section .coat-of-arms {
   height: 26vh;
 }
+
 .current-country .current-country-info .right-info-section .coat-of-arms .coat-img {
   height: 100%;
 }
+
 .current-country .current-country-info .right-info-section .coat-of-arms .coat-img div {
   padding: 5px 0 5px 0;
 }
+
 .current-country .current-country__map {
   margin: 0 auto;
   border: 1px solid red;
 }
+
 .current-country .open-street-maps {
   margin: 10px 0 0 0;
   text-align: center;
 }
+
 .current-country .open-street-maps a {
   color: #fefba5;
   text-decoration: none;
 }
+
 .current-country .retranslator {
   cursor: pointer;
-  transition: 0.75s;
+  -webkit-transition: .75s;
+  transition: .75s;
 }
+
 .current-country .retranslator:hover {
-  color: rgb(56, 6, 16);
-}/*# sourceMappingURL=style.css.map */
+  color: #380610;
+}
+/*# sourceMappingURL=style.css.map */
