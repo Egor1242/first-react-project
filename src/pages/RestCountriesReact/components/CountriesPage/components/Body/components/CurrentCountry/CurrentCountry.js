@@ -2,8 +2,10 @@ import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLan
 import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
 import { placeBordersIntoHtml } from "../../../../../../../../utility/placeBordersIntoHtml"
 import { placeContinentsIntoHtml } from "../../../../../../../../utility/placeContinentsIntoHtml"
-import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
 import { setZoomScale } from "../../../../../../../../utility/setZoomScale"
+
+import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
+import { ColorChange } from "./components/ColorChange/ColorChange"
 
 import "./style.css"
 
@@ -12,6 +14,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, countries}) => 
         <>
             <button className="cancel" onClick={() => setCurrentPage("Main")}>{"<"}</button>
             <div className="current-country">
+               <ColorChange></ColorChange>
                 <div className="current-country__title">{currentCountry?.name?.common}</div>
                 <div className="sections">
                     <div className="left-section">
