@@ -7,7 +7,7 @@ export const Country = ({ country, setCurrentPage }) => {
 
     return (
         <div className="country">
-            <div className="country__title" onClick={() => setCurrentPage(country?.altSpellings[0])}>{country?.name?.common}</div>
+            <div className="country__title" onClick={() => setCurrentPage(country?.cca3)}>{country?.name?.common}</div>
             <div className="flag">
                 <img className="flag-img" alt="" src={country?.flags?.png}></img>
             </div>

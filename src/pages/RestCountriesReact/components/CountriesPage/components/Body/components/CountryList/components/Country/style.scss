@@ -1,10 +1,16 @@
 .country {
-    border: 1.5px solid magenta;
+    transition: .25s;
+    border: 2px solid magenta;
     background-color: rgba(74, 70, 64, 0.387);
     width: 30%;
     aspect-ratio: 1/1;
     margin: 1%;
     border-radius: 35px 0 35px 0;
+
+    &:hover{
+        border-color: red;
+        background-color: rgba(74, 70, 64, 0.519);
+    }
 
     .country__title {
         width: fit-content;
@@ -18,8 +24,6 @@
         width: 95%;
         margin: 5px auto;
         text-align: start;
-
-        .country__capital {}
 
         .country__area {
             .km-square {
@@ -39,7 +43,7 @@
     .flag {
 
         width: 95%;
-        aspect-ratio: 3/2;
+        aspect-ratio: 5/3;
         margin: 5px auto;
 
         .flag-img {

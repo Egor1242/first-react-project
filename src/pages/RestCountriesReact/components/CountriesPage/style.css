@@ -1,16 +1,1 @@
-.refresher {
-  position: absolute;
-  left: 0;
-  top: 5px;
-  border: none;
-  background-color: white;
-  -webkit-transition: .75s;
-  transition: .75s;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.refresher:hover {
-  background-color: salmon;
-}
 /*# sourceMappingURL=style.css.map */

@@ -2,19 +2,11 @@ import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLan
 import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
 import { placeBordersIntoHtml } from "../../../../../../../../utility/placeBordersIntoHtml"
 import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
+import { setZoomScale } from "../../../../../../../../utility/setZoomScale"
 
 import "./style.css"
 
 export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
-
-    let currentZoom;
-
-    if (currentCountry?.area < 1000) currentZoom = 10
-    else if (currentCountry?.area >= 1000 && currentCountry?.area < 10000) currentZoom = 8
-    else if (currentCountry?.area >= 10000 && currentCountry?.area < 100000) currentZoom = 6
-    else if (currentCountry?.area >= 100000 && currentCountry?.area < 1000000) currentZoom = 5
-    else currentZoom = 2
-
     return (
         <>
             <button className="cancel" onClick={() => setCurrentPage("Main")}>{"<"}</button>
@@ -45,24 +37,24 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                                 Population: {currentCountry?.population} citizens.
                             </div>
                             <div className="current-country__languages">
-                                Languages: <span>{placeLanguagesIntoHtml(currentCountry?.languages) || "-"}</span>
+                                Languages: {placeLanguagesIntoHtml(currentCountry?.languages) || "-"}
                             </div>
                             <div className="current-country__languages">
-                                Currencies: <span>{placeCurrenciesIntoHtml(currentCountry?.currencies) || "-"}</span>
+                                Currencies: {placeCurrenciesIntoHtml(currentCountry?.currencies) || "-"}
                             </div>
                             <div className="current-country__languages">
-                                Timezone: <span>{currentCountry?.timezones.length > 0 && currentCountry?.timezones[0]}</span>
+                                Timezone: {currentCountry?.timezones.length > 0 && currentCountry?.timezones[0]}
                             </div>
                             <div className="current-country__independent">
-                                Independence: <span>{currentCountry?.independent ? "Independent" : "Dependent"}</span>
+                                Independence: {currentCountry?.independent ? "Independent" : "Dependent"}
                             </div>
                             <div className="current-country__borders">
-                                Borders: <span>{placeBordersIntoHtml(currentCountry?.borders, setCurrentPage) || "-"}</span>
+                                Borders: {currentCountry?.borders && placeBordersIntoHtml(currentCountry?.borders, setCurrentPage) || "-"}
                             </div>
                         </div>
                     </div>
                     <div className="right-section">
-                        <GoogleMapCustom currentZoom={currentZoom} currentCenter={currentCountry?.latlng} />
+                        <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
                     </div>
                 </div>
             </div>

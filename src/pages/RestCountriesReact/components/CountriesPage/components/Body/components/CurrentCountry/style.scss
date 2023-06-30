@@ -97,4 +97,13 @@
         border: 1px solid red;
         
     }
+
+    .retranslator{
+        cursor: pointer;
+        transition: .75s;
+
+        &:hover{
+            color: rgb(56, 5, 16)
+        }
+    }
 }
