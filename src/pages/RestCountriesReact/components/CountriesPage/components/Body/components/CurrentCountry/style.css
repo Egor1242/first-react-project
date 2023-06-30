@@ -106,4 +106,9 @@
   margin: 10px 0 0 0;
   text-align: center;
 }
+
+.current-country .open-street-maps a {
+  color: #fefba5;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
