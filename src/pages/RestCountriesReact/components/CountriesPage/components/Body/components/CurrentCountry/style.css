@@ -45,52 +45,47 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
-
-.current-country .flags {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  width: 20vw;
-  height: 25vh;
-}
-
-.current-country .flags .flag {
-  height: 100%;
-  aspect-ratio: 3/2;
-  margin-right: 25px;
-}
-
-.current-country .flags .flag img {
-  height: 100%;
-}
-
-.current-country .flags .flag .flag-img {
-  width: 105%;
-}
-
-.current-country .flags .Coat-of-Arms {
-  height: 100%;
-  aspect-ratio: 1/1;
-}
-
-.current-country .flags .Coat-of-Arms img {
-  width: 80%;
-  height: 100%;
-}
-
 .current-country .current-country-info {
+  width: 55vw;
+  display: flex;
   font-size: 20px;
   margin: 0 0 0 20px;
 }
 .current-country .current-country-info div {
   margin: 5px 0;
 }
-
+.current-country .current-country-info .left-info-section {
+  width: 27vw;
+}
+.current-country .current-country-info .left-info-section .flag-frame {
+  height: 26vh;
+  aspect-ratio: 7/4;
+}
+.current-country .current-country-info .left-info-section .flag-frame .flag-img {
+  height: 100%;
+  width: 100%;
+}
+.current-country .current-country-info .right-info-section .coat-of-arms {
+  height: 26vh;
+}
+.current-country .current-country-info .right-info-section .coat-of-arms .coat-img {
+  height: 100%;
+}
+.current-country .current-country-info .right-info-section .coat-of-arms .coat-img div {
+  padding: 5px 0 5px 0;
+}
 .current-country .current-country__map {
   margin: 0 auto;
   border: 1px solid red;
 }
-/*# sourceMappingURL=style.css.map */
+.current-country .open-street-maps {
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+.current-country .retranslator {
+  cursor: pointer;
+  transition: 0.75s;
+}
+.current-country .retranslator:hover {
+  color: rgb(56, 5, 16);
+}/*# sourceMappingURL=style.css.map */
