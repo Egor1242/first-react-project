@@ -7,7 +7,7 @@ import { setZoomScale } from "../../../../../../../../utility/setZoomScale"
 
 import "./style.css"
 
-export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
+export const CurrentCountry = ({ currentCountry, setCurrentPage, countries}) => {
     return (
         <>
             <button className="cancel" onClick={() => setCurrentPage("Main")}>{"<"}</button>
@@ -48,7 +48,7 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, }) => {
                                     Independence: {currentCountry?.independent ? "Independent" : "Dependent"}
                                 </div>
                                 <div className="current-country__borders">
-                                    Borders: {currentCountry?.borders && placeBordersIntoHtml(currentCountry?.borders, setCurrentPage) || "-"}
+                                    Borders: {currentCountry?.borders && placeBordersIntoHtml(currentCountry?.borders, setCurrentPage, countries) || "-"}
                                 </div>
                             </div>
                             <div className="right-info-section">

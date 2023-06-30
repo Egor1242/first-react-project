@@ -11,7 +11,7 @@ export const Body = ({ countries }) => {
             {
                 currentPage === "Main" ?
                     <CountryList setCurrentPage={setCurrentPage} countries={countries} /> :
-                    <CurrentCountry setCurrentPage={setCurrentPage} currentCountry={countries.find(country => country?.cca3 === currentPage)} />
+                    <CurrentCountry setCurrentPage={setCurrentPage} countries={countries} currentCountry={countries.find(country => country?.cca3 === currentPage)} />
             }
         </div>
     )
