@@ -109,4 +109,13 @@
             text-decoration: none;
         }
     }
+
+    .retranslator{
+        cursor: pointer;
+        transition: .75s;
+
+        &:hover{
+            color: rgb(56, 5, 16)
+        }
+    }
 }
