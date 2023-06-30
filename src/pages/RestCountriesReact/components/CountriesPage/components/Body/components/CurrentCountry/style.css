@@ -82,16 +82,14 @@
   margin: 10px 0 0 0;
   text-align: center;
 }
-
 .current-country .open-street-maps a {
   color: #fefba5;
   text-decoration: none;
 }
-/*# sourceMappingURL=style.css.map */
 .current-country .retranslator {
   cursor: pointer;
   transition: 0.75s;
 }
 .current-country .retranslator:hover {
-  color: rgb(56, 5, 16);
+  color: rgb(56, 6, 16);
 }/*# sourceMappingURL=style.css.map */
