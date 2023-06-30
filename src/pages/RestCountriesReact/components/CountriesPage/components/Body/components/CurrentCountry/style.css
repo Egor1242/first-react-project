@@ -45,46 +45,52 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
+
 .current-country .flags {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   width: 20vw;
   height: 25vh;
 }
+
 .current-country .flags .flag {
   height: 100%;
   aspect-ratio: 3/2;
   margin-right: 25px;
 }
+
 .current-country .flags .flag img {
   height: 100%;
 }
+
 .current-country .flags .flag .flag-img {
   width: 105%;
 }
+
 .current-country .flags .Coat-of-Arms {
   height: 100%;
   aspect-ratio: 1/1;
 }
+
 .current-country .flags .Coat-of-Arms img {
   width: 80%;
   height: 100%;
 }
+
 .current-country .current-country-info {
   font-size: 20px;
-  margin: 20px 0 0 20px;
+  margin: 0 0 0 20px;
 }
 .current-country .current-country-info div {
   margin: 5px 0;
 }
+
 .current-country .current-country__map {
   margin: 0 auto;
   border: 1px solid red;
 }
-.current-country .retranslator {
-  cursor: pointer;
-  transition: 0.75s;
-}
-.current-country .retranslator:hover {
-  color: rgb(56, 5, 16);
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

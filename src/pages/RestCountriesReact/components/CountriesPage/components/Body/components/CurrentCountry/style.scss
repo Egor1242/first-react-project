@@ -51,44 +51,47 @@
         text-transform: uppercase;
     }
 
-    .flags {
-        display: flex;
-        justify-content: start;
-        width: 20vw;
-        height: 25vh;
-        //overflow: hidden;
-        
+    //====================================================================
 
-        .flag {
-            height: 100%;
-            aspect-ratio: 3/2;
-            margin-right: 25px;
-
-            img {
-                height: 100%;
-            }
-
-            .flag-img{
-                width: 105%;
-            }
-        }
-
-        .Coat-of-Arms{
-            height: 100%;
-            aspect-ratio: 1/1;
-
-            img {
-                width: 80%;
-                height: 100%;
-            }
-        }
-    }
+    //====================================================================
 
     .current-country-info{
+        width: 55vw;
+        display: flex;
         font-size: 20px;
-        margin: 20px 0 0 20px;
+        margin: 0 0 0 20px;
         div{
             margin: 5px 0;
+        }
+
+        .left-info-section{
+            width: 27vw;
+            
+            .flag-frame{
+                height: 26vh;
+                aspect-ratio: 7/4;
+
+                .flag-img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        .right-info-section{
+            //width: 27vw;
+
+            .coat-of-arms{
+                height: 26vh;
+
+                .coat-img{
+                    height: 100%;
+
+                    div{
+                        padding: 5px 0 5px 0;
+                    }
+                }
+            }
         }
     }
     
@@ -96,6 +99,10 @@
         margin: 0 auto;
         border: 1px solid red;
         
+    }
+    .open-street-maps{
+        margin: 10px 0 0 0;
+        text-align: center;
     }
 
     .retranslator{
