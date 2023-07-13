@@ -11,7 +11,6 @@ export function CountriesPage({countries}) {
 
     return (
         <div className='countries-page'>
-            
             <Body countries={countries} />
         </div>
     )
