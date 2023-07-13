@@ -3,9 +3,9 @@ import { RestCountriesReact } from '../pages/RestCountriesReact/RestCountriesRea
 import './App.css';
 
 export function App() {
-  return(
+  return (
     <div className='app'>
-    <RestCountriesReact/>
+      <RestCountriesReact />
     </div>
   )
 

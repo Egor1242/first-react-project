@@ -9,19 +9,15 @@ import { ColorChange } from "./components/ColorChange/ColorChange"
 
 import "./style.css"
 
-export const CurrentCountry = ({ currentCountry, setCurrentPage, countries}) => {
+export const CurrentCountry = ({ currentCountry, setCurrentPage, countries }) => {
     return (
         <>
             <button className="cancel" onClick={() => setCurrentPage("Main")}>{"<"}</button>
             <div className="current-country">
-               <ColorChange></ColorChange>
+                <ColorChange></ColorChange>
                 <div className="current-country__title">{currentCountry?.name?.common}</div>
                 <div className="sections">
                     <div className="left-section">
-                        <div className="flags">
-
-
-                        </div>
                         <div className="current-country-info">
                             <div className="left-info-section">
 
@@ -67,9 +63,11 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, countries}) => 
                         </div>
                     </div>
                     <div className="right-section">
-                        <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
-                        <div className="open-street-maps">
-                            OpenStreetMaps: <span><a href={currentCountry?.maps.openStreetMaps || false}>{currentCountry?.maps.openStreetMaps || false}</a></span>
+                        <div className="google-map">
+                            <GoogleMapCustom currentZoom={setZoomScale(currentCountry?.area)} currentCenter={currentCountry?.latlng} />
+                            <div className="open-street-maps">
+                                OpenStreetMaps: <span><a href={currentCountry?.maps.openStreetMaps || false}>{currentCountry?.maps.openStreetMaps || false}</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>

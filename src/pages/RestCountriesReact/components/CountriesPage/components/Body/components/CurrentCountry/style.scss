@@ -10,16 +10,16 @@
     width: 70px;
     height: 80vh;
     background-color: rgba(192, 189, 185, 0.492);
-    transition: .75s;
     border-radius: 10px;
 
     &:hover {
+        transition: .25s;
         background-color: rgba(128, 255, 0, 0.489);
-        border-radius: 20px;
     }
 }
 
 .current-country {
+    backdrop-filter: blur(5px);
     position: relative;
 
     .color-setup{
@@ -45,7 +45,6 @@
     width: 85vw;
     height: 80vh;
     margin: 0 auto;
-    //background-color: rgba(250, 184, 114, 0.862);
     background-color: rgba(4, 126, 124, 0.862);
     border: 0.75px solid red;
     padding: 5px 15px;
@@ -57,10 +56,16 @@
 
     .left-section{
         width: 45%;
+        height: 70vh;
     }
 
     .right-section{
-        width: 48%;
+        width: 48%; 
+        height: 70vh;
+
+        .google-map{
+            height: 80%;
+        }
     }
 
     .current-country__title {
@@ -85,7 +90,7 @@
             width: 27vw;
             
             .flag-frame{
-                height: 26vh;
+                height: 20vh;
                 aspect-ratio: 7/4;
 
                 .flag-img{
@@ -96,17 +101,14 @@
         }
 
         .right-info-section{
-            //width: 27vw;
 
             .coat-of-arms{
-                height: 26vh;
+                height: 20vh;
+                aspect-ratio: 1/1.5;
 
-                .coat-img{
+                img{
                     height: 100%;
-
-                    div{
-                        padding: 5px 0 5px 0;
-                    }
+                    width: 100%;
                 }
             }
         }
