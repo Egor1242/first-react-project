@@ -1,5 +1,6 @@
 .country {
-  transition: 0.25s;
+  -webkit-transition: .25s;
+  transition: .25s;
   border: 2px solid magenta;
   background-color: rgba(74, 70, 64, 0.387);
   width: 30%;
@@ -9,11 +10,14 @@
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
+
 .country:hover {
   border-color: red;
   background-color: rgba(74, 70, 64, 0.519);
 }
+
 .country .country__title {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
@@ -21,14 +25,17 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
 .country .country-info {
   width: 95%;
   margin: 5px auto;
   text-align: start;
 }
+
 .country .country-info .country__area .km-square {
   position: relative;
 }
+
 .country .country-info .country__area .km-square::before {
   position: absolute;
   content: "2";
@@ -36,12 +43,15 @@
   top: -5px;
   right: -8px;
 }
+
 .country .flag {
   width: 95%;
   aspect-ratio: 5/3;
   margin: 5px auto;
 }
+
 .country .flag .flag-img {
   width: 100%;
   height: 100%;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
