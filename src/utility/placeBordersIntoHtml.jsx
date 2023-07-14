@@ -1,4 +1,4 @@
-import { fromCca3ToText } from "./fromCca3ToText";
+import { fromCca3ToText } from "./fromCca3ToText.jsx";
 
 export const placeBordersIntoHtml = (bordersArray, setCurrentPage, countries) => {
     let result = [];
@@ -11,11 +11,12 @@ export const placeBordersIntoHtml = (bordersArray, setCurrentPage, countries) =>
 
         let elem =
             <>
-                <span
+                <a
+                    to={`/${bordersArray[i]}`}
                     className="retranslator"
                     onClick={() => setCurrentPage(bordersArray[i])}>
                     {textBordersArray[i]}
-                </span>{symbol}
+                </a>{symbol}
             </>;
 
         result.push(elem);

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Body } from "./components/Body"
 
-import "./style.css";
+import "./style.sass";
 
 
 export function CountriesPage({countries}) {

@@ -1,7 +1,7 @@
 import { placeLanguagesIntoHtml } from "../../../../../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../../../../../utility/placeCurrenciesIntoHtml"
 
-import "./style.css"
+import "./style.sass"
 
 export const Country = ({ country, setCurrentPage }) => {
 
@@ -12,25 +12,25 @@ export const Country = ({ country, setCurrentPage }) => {
                 <img className="flag-img" alt="" src={country?.flags?.png}></img>
             </div>
             <div className="country-info">
-                <div className="country__capital">
+                <div>
                     Capital: {country?.capital || "-"}
                 </div>
-                <div className="country__area">
+                <div>
                     Area: {country?.area} <span className="km-square">km</span>
                 </div>
-                <div className="country__area">
+                <div>
                     Population: {country?.population} citizens.
                 </div>
-                <div className="country__languages">
+                <div>
                     Languages: <span>{placeLanguagesIntoHtml(country?.languages) || "-"}</span>
                 </div>
-                <div className="country__languages">
+                <div>
                     Currencies: <span>{placeCurrenciesIntoHtml(country?.currencies) || "-"}</span>
                 </div>
-                <div className="country__languages">
+                <div>
                     Timezone: <span>{country?.timezones.length > 0 && country?.timezones[0]}</span>
                 </div>
-                <div className="country__independent">
+                <div>
                     Independence: <span>{country?.independent ? "Independent" : "Dependent"}</span>
                 </div>
             </div>

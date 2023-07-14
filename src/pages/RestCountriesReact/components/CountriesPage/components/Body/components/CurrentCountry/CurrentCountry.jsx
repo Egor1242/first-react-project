@@ -7,7 +7,7 @@ import { setZoomScale } from "../../../../../../../../utility/setZoomScale"
 import { GoogleMapCustom } from "../../../../../../../../components/GoogleMap"
 import { ColorChange } from "./components/ColorChange/ColorChange"
 
-import "./style.css"
+import "./style.sass"
 
 export const CurrentCountry = ({ currentCountry, setCurrentPage, countries }) => {
     return (
@@ -25,28 +25,28 @@ export const CurrentCountry = ({ currentCountry, setCurrentPage, countries }) =>
                                     <img className="flag-img" alt="" src={currentCountry?.flags?.png}></img>
                                 </div>
 
-                                <div className="current-country__capital">
+                                <div>
                                     Capital: {currentCountry?.capital || "-"}
                                 </div>
-                                <div className="current-country__area">
+                                <div>
                                     Area: {currentCountry?.area} <span className="km-square">km</span>
                                 </div>
-                                <div className="current-country__area">
+                                <div>
                                     Population: {currentCountry?.population} citizens.
                                 </div>
-                                <div className="current-country__languages">
+                                <div>
                                     Languages: {placeLanguagesIntoHtml(currentCountry?.languages) || "-"}
                                 </div>
-                                <div className="current-country__languages">
+                                <div>
                                     Currencies: {placeCurrenciesIntoHtml(currentCountry?.currencies) || "-"}
                                 </div>
-                                <div className="current-country__languages">
+                                <div>
                                     Timezone: {currentCountry?.timezones.length > 0 && currentCountry?.timezones[0]}
                                 </div>
-                                <div className="current-country__independent">
+                                <div>
                                     Independence: {currentCountry?.independent ? "Independent" : "Dependent"}
                                 </div>
-                                <div className="current-country__borders">
+                                <div>
                                     Borders: {currentCountry?.borders && placeBordersIntoHtml(currentCountry?.borders, setCurrentPage, countries) || "-"}
                                 </div>
                             </div>

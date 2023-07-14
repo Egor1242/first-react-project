@@ -1,12 +1,13 @@
+import { React } from "react"
 import { RestCountriesReact } from '../pages/RestCountriesReact/RestCountriesReact';
 
-import './App.css';
+import './App.sass';
 
 export function App() {
   return (
-    <div className='app'>
-      <RestCountriesReact />
-    </div>
+      <div className='app'>
+        <RestCountriesReact />
+      </div>
   )
 
 }

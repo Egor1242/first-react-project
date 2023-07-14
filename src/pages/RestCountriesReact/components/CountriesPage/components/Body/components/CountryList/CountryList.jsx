@@ -1,6 +1,6 @@
 import { Country } from "./components/Country/Country"
 
-import "./style.css"
+import "./style.sass"
 
 export const CountryList = ({ countries, setCurrentPage }) => {
     return (
