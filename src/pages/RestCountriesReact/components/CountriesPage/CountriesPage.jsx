@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { Body } from "./components/Body"
+import { Outlet } from 'react-router-dom';
 
 import "./style.sass";
 
 
-export function CountriesPage({countries}) {
 
-    console.log(countries);
-
+export function CountriesPage() {
     return (
         <div className='countries-page'>
-            <Body countries={countries} />
+            <Outlet />
         </div>
     )
 }

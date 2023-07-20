@@ -2,7 +2,7 @@
   "name": "first-react-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http:Egor1242.github.io/main",
+  "homepage": "http:Egor1242.github.io/",
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
     "@testing-library/jest-dom": "^5.16.5",

@@ -7,7 +7,14 @@ export class ApiConnect {
         const proxyResponse = await fetch(ApiURL + params);
         const unwrappedResponse = await proxyResponse.json();
         return {
-            response: unwrappedResponse,
+            response: unwrappedResponse.map(
+                (country) => {
+                    return {
+                        id: country?.cca3,
+                        data: country
+                    }
+                }
+            ),
             requestTime: new Date() - startTime,
         };
     }

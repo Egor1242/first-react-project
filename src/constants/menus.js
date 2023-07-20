@@ -1,1 +1,1 @@
-export const menus = [["main","Главная"], ["countries","Страны"], ["aboutUs","О нас"]];
+export const menus = [["", "Главная"], ["countries/all", "Страны"], ["aboutUs", "О нас"]];

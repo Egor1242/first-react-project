@@ -9,7 +9,7 @@ export function Header({ headers }) {
                 headers?.map((header, index) => {
                     return (
                         <div key={index} className="header">
-                            <a href={`./${header[0]}`} >
+                            <a href={`/${header[0]}`} >
                                 {header[1]}
                             </a>
                         </div>

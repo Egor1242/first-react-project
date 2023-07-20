@@ -1,6 +1,9 @@
 import { fromCca3ToText } from "./fromCca3ToText.jsx";
 
-export const placeBordersIntoHtml = (bordersArray, setCurrentPage, countries) => {
+export const placeBordersIntoHtml = (bordersArray, countries) => {
+
+    if (typeof bordersArray === "undefined" || typeof bordersArray === "null") return [];
+
     let result = [];
 
     let textBordersArray = fromCca3ToText(bordersArray, countries);
@@ -12,9 +15,9 @@ export const placeBordersIntoHtml = (bordersArray, setCurrentPage, countries) =>
         let elem =
             <>
                 <a
-                    to={`/${bordersArray[i]}`}
+                    href={`/countries/${bordersArray[i]}`}
                     className="retranslator"
-                    onClick={() => setCurrentPage(bordersArray[i])}>
+                >
                     {textBordersArray[i]}
                 </a>{symbol}
             </>;

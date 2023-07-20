@@ -10,7 +10,7 @@ export const GoogleMapCustom = ({ currentZoom, currentCenter }) => {
         height: '100%',
     };
 
-    const center = { lat: currentCenter[0], lng: currentCenter[1] };
+    const center = { lat: currentCenter?.[0], lng: currentCenter?.[1] };
 
     return (
             <LoadScript googleMapsApiKey={API_KEY}>
