@@ -1,5 +1,5 @@
 import { React, useEffect, useState, createContext } from "react"
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { menus } from "../../constants/menus"
 import { ApiConnect } from "../../services/ApiConnect"
 
@@ -21,7 +21,6 @@ const router = createBrowserRouter([
         element: <CountriesPage />,
         children: [
             {
-
                 path: "all",
                 element: <CountryList />
             },
@@ -31,7 +30,11 @@ const router = createBrowserRouter([
                 element: <CurrentCountry />
             }
         ]
-    }
+    },
+    // {
+    //     path:"/aboutUs",
+    //     element: <AboutUS/>
+    // }
 ]);
 
 
@@ -52,6 +55,7 @@ export const RestCountriesReact = () => {
     return (
         <div className="rest-countries">
             <Header headers={menus} />
+
             <CountryListContext.Provider value={countryList}>
                 <RouterProvider router={router} />
             </CountryListContext.Provider>

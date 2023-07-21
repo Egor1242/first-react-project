@@ -47,7 +47,7 @@ export const CurrentCountry = () => {
                                     Population: {currentCountryData?.population} citizens.
                                 </div>
                                 <div>
-                                    Languages: {placeLanguagesIntoHtml(currentCountryData?.languages) || "-"}
+                                    Languages: {placeLanguagesIntoHtml(currentCountryData?.languages)}
                                 </div>
                                 <div>
                                     Currencies: {placeCurrenciesIntoHtml(currentCountryData?.currencies) || "-"}
@@ -59,7 +59,7 @@ export const CurrentCountry = () => {
                                     Independence: {currentCountryData?.independent ? "Independent" : "Dependent"}
                                 </div>
                                 <div>
-                                    Borders: {placeBordersIntoHtml(currentCountryData?.borders, countryList) || "-"}
+                                    Borders: {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
                                 </div>
                             </div>
                             <div className="right-info-section">

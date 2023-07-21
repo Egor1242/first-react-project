@@ -2,7 +2,7 @@ import { fromCca3ToText } from "./fromCca3ToText.jsx";
 
 export const placeBordersIntoHtml = (bordersArray, countries) => {
 
-    if (typeof bordersArray === "undefined" || typeof bordersArray === "null") return [];
+    if (!bordersArray) return "-";
 
     let result = [];
 
