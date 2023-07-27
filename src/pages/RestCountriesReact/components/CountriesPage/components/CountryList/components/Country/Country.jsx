@@ -10,7 +10,7 @@ export const Country = ({ country }) => {
     return (
         <div className="country">
             <div className="country__title">
-                <a href={`/countries/${country.id}`}>
+                <a href={`${country.id}`}>
                     {countryData?.name?.common}
                 </a>
             </div>

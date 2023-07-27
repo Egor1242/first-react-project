@@ -15,7 +15,7 @@ export const placeBordersIntoHtml = (bordersArray, countries) => {
         let elem =
             <>
                 <a
-                    href={`/countries/${bordersArray[i]}`}
+                    href={`${bordersArray[i]}`}
                     className="retranslator"
                 >
                     {textBordersArray[i]}

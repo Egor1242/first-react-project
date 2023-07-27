@@ -1,1 +1,1 @@
-export const menus = [["", "Главная"], ["countries/all", "Страны"], ["aboutUs", "О нас"]];
+export const menus = [["first-react-project/", "Главная"], ["first-react-project/countries/all", "Страны"], ["first-react-project/aboutUs", "О нас"]];

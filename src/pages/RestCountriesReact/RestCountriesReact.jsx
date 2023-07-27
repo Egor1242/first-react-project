@@ -13,11 +13,11 @@ export const CountryListContext = createContext([])
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "first-react-project/",
         element: <MainPage />,
     },
     {
-        path: "/countries",
+        path: "first-react-project/countries",
         element: <CountriesPage />,
         children: [
             {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         ]
     },
     // {
-    //     path:"/aboutUs",
+    //     path:"first-react-project/aboutUs",
     //     element: <AboutUS/>
     // }
 ]);
