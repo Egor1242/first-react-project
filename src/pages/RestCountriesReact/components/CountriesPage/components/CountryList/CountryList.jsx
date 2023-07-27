@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CountryListContext } from "../../../../RestCountriesReact"
 
 import TextField from '@mui/material/TextField';
@@ -11,13 +11,22 @@ export const CountryList = () => {
 
     const countryList = useContext(CountryListContext);
 
+    const [currentSearchResult, setCurrentSearchResult] = useState("");
+
+    let searchedCountryList = countryList.filter(country => country
+        ?.data
+        ?.name
+        ?.official
+        ?.toLowerCase()
+        ?.includes(currentSearchResult.toLowerCase()))
+
     return (<>
         <div className="search">
             <Autocomplete
-                disablePortal
+                freeSolo
                 id="combo-box-demo"
                 options={
-                    countryList.map(
+                    countryList?.map(
                         country => {
                             return {
                                 label: country?.data?.name?.official
@@ -25,12 +34,19 @@ export const CountryList = () => {
                         }
                     )
                 }
-                sx={{ width: "80%", margin: "0 auto", bgcolor: "white", border:"none", borderRadius: "15px" }}
-                renderInput={(params) => <TextField {...params} label="Countries" />}
+                sx={{ width: "80%", margin: "0 auto", bgcolor: "white", border: "none" }}
+                renderInput={(params) =>
+                    <TextField
+                        onChange={() => setCurrentSearchResult(document.querySelector("#combo-box-demo")?.value)}
+                        value={currentSearchResult}
+                        {...params}
+                        label="Countries"
+                    />
+                }
             />
         </div>
         <div className="country-list">
-            {countryList?.map((country, index) => <Country key={index} country={country} />)}
+            {searchedCountryList?.map((country, index) => <Country key={index} country={country} />)}
         </div>
     </>
     )

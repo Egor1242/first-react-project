@@ -11,7 +11,7 @@ export const Country = ({ country }) => {
         <div className="country">
             <div className="country__title">
                 <a href={`${country.id}`}>
-                    {countryData?.name?.common}
+                    {countryData?.name?.official}
                 </a>
             </div>
             <div className="flag">
