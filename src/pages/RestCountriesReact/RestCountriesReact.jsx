@@ -1,42 +1,11 @@
 import { React, useEffect, useState, createContext } from "react"
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {Outlet } from "react-router-dom";
 import { menus } from "../../constants/menus"
 import { ApiConnect } from "../../services/ApiConnect"
 
 import { Header } from "../../components/Header"
-import { CountryList } from "./components/CountriesPage/components/CountryList"
-import { CurrentCountry } from "./components/CountriesPage/components/CurrentCountry";
-import { MainPage } from "./components/MainPage"
-import { CountriesPage } from "./components/CountriesPage"
 
 export const CountryListContext = createContext([])
-
-const router = createBrowserRouter([
-    {
-        path: "first-react-project/",
-        element: <MainPage />,
-    },
-    {
-        path: "first-react-project/countries",
-        element: <CountriesPage />,
-        children: [
-            {
-                path: "all",
-                element: <CountryList />
-            },
-
-            {
-                path: ":currentCountry",
-                element: <CurrentCountry />
-            }
-        ]
-    },
-    // {
-    //     path:"first-react-project/aboutUs",
-    //     element: <AboutUS/>
-    // }
-]);
-
 
 export const RestCountriesReact = () => {
 
@@ -57,7 +26,7 @@ export const RestCountriesReact = () => {
             <Header headers={menus} />
 
             <CountryListContext.Provider value={countryList}>
-                <RouterProvider router={router} />
+                <Outlet/>
             </CountryListContext.Provider>
         </div>
     );

@@ -32,11 +32,19 @@ export const CurrentCountry = () => {
                     <div className="left-section">
                         <div className="current-country-info">
                             <div className="left-info-section">
-
-                                <div className="flag-frame">
-                                    <img className="flag-img" alt="" src={currentCountryData?.flags?.png}></img>
+                                <div className="flags">
+                                    <div className="flag-frame">
+                                        <img className="flag-img" alt="" src={currentCountryData?.flags?.png}></img>
+                                    </div>
+                                    <div className="coat-of-arms">
+                                        {
+                                            currentCountryData?.coatOfArms &&
+                                                Object.values(currentCountryData?.coatOfArms)?.length > 0 ?
+                                                <img className="coat-img" alt="" src={currentCountryData?.coatOfArms?.png}></img> :
+                                                ""
+                                        }
+                                    </div>
                                 </div>
-
                                 <div>
                                     Capital: {currentCountryData?.capital || "-"}
                                 </div>
@@ -61,17 +69,9 @@ export const CurrentCountry = () => {
                                 <div>
                                     Borders: {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
                                 </div>
-                            </div>
-                            <div className="right-info-section">
-                                <div className="coat-of-arms">
-                                    {
-                                        currentCountryData?.coatOfArms &&
-                                            Object.values(currentCountryData?.coatOfArms)?.length > 0 ?
-                                            <img className="coat-img" alt="" src={currentCountryData?.coatOfArms?.png}></img> :
-                                            ""
-                                    }
+                                <div>
+                                    Continents: {placeContinentsIntoHtml(currentCountryData?.continents)}
                                 </div>
-                                Continents: <span>{placeContinentsIntoHtml(currentCountryData?.continents)}</span>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ export const CurrentCountry = () => {
                         <div className="google-map">
                             <GoogleMapCustom currentZoom={setZoomScale(currentCountryData?.area)} currentCenter={currentCountryData?.latlng} />
                             <div className="open-street-maps">
-                                OpenStreetMaps: <span><a href={currentCountryData?.maps.openStreetMaps || false}>{currentCountryData?.maps.openStreetMaps || false}</a></span>
+                                OpenStreetMaps: <span><a href={`${currentCountryData?.maps?.openStreetMaps}` }>{currentCountryData?.maps?.openStreetMaps}</a></span>
                             </div>
                         </div>
                     </div>
