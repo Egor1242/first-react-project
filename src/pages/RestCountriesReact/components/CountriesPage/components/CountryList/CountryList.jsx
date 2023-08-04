@@ -22,7 +22,11 @@ export const CountryList = () => {
 
     return (<>
         <div className="search">
-            <input onChange={(event) => setCurrentSearchResult(event.target.value)} />
+            <input
+                value={currentSearchResult}
+                onChange={(event) => setCurrentSearchResult(event.target.value)}
+                placeholder="Введите название страны, которую ищете"
+            />
         </div>
         <div className="filter">
             <Filters />
