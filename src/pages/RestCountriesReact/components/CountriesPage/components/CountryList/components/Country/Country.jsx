@@ -19,25 +19,25 @@ export const Country = ({ country }) => {
             </div>
             <div className="country-info">
                 <div>
-                    Capital: {countryData?.capital || "-"}
+                    <span className="country-property">Capital:</span> {countryData?.capital || "-"}
                 </div>
                 <div>
-                    Area: {countryData?.area} <span className="km-square">km</span>
+                <span className="country-property">Area:</span> {countryData?.area} <span className="km-square">km</span>
                 </div>
                 <div>
-                    Population: {countryData?.population} citizens.
+                    <span className="country-property">Population:</span> {countryData?.population} citizens.
                 </div>
                 <div>
-                    Languages: <span>{placeLanguagesIntoHtml(countryData?.languages) || "-"}</span>
+                <span className="country-property">Languages:</span> <span>{placeLanguagesIntoHtml(countryData?.languages) || "-"}</span>
                 </div>
                 <div>
-                    Currencies: <span>{placeCurrenciesIntoHtml(countryData?.currencies) || "-"}</span>
+                <span className="country-property">Currencies:</span> <span>{placeCurrenciesIntoHtml(countryData?.currencies) || "-"}</span>
                 </div>
                 <div>
-                    Timezone: <span>{countryData?.timezones.length > 0 && countryData?.timezones[0]}</span>
+                <span className="country-property">Timezone:</span> <span>{countryData?.timezones.length > 0 && countryData?.timezones[0]}</span>
                 </div>
                 <div>
-                    Independence: <span>{countryData?.independent ? "Independent" : "Dependent"}</span>
+                <span className="country-property">Independence:</span> <span>{countryData?.independent ? "Independent" : "Dependent"}</span>
                 </div>
             </div>
         </div>

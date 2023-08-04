@@ -46,31 +46,31 @@ export const CurrentCountry = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    Capital: {currentCountryData?.capital || "-"}
+                                    <span className="country-property">Capital:</span> {currentCountryData?.capital || "-"}
                                 </div>
                                 <div>
-                                    Area: {currentCountryData?.area} <span className="km-square">km</span>
+                                <span className="country-property">Area:</span> {currentCountryData?.area} <span className="km-square">km</span>
                                 </div>
                                 <div>
-                                    Population: {currentCountryData?.population} citizens.
+                                <span className="country-property">Population:</span> {currentCountryData?.population} citizens.
                                 </div>
                                 <div>
-                                    Languages: {placeLanguagesIntoHtml(currentCountryData?.languages)}
+                                <span className="country-property">Languages:</span> {placeLanguagesIntoHtml(currentCountryData?.languages)}
                                 </div>
                                 <div>
-                                    Currencies: {placeCurrenciesIntoHtml(currentCountryData?.currencies) || "-"}
+                                <span className="country-property">Currencies:</span> {placeCurrenciesIntoHtml(currentCountryData?.currencies) || "-"}
                                 </div>
                                 <div>
-                                    Timezone: {currentCountryData?.timezones.length > 0 && currentCountryData?.timezones[0]}
+                                <span className="country-property">Timezone:</span> {currentCountryData?.timezones.length > 0 && currentCountryData?.timezones[0]}
                                 </div>
                                 <div>
-                                    Independence: {currentCountryData?.independent ? "Independent" : "Dependent"}
+                                <span className="country-property">Independence:</span> {currentCountryData?.independent ? "Independent" : "Dependent"}
                                 </div>
                                 <div>
-                                    Borders: {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
+                                <span className="country-property">Borders:</span> {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
                                 </div>
                                 <div>
-                                    Continents: {placeContinentsIntoHtml(currentCountryData?.continents)}
+                                <span className="country-property">Continents:</span> {placeContinentsIntoHtml(currentCountryData?.continents)}
                                 </div>
                             </div>
                         </div>
