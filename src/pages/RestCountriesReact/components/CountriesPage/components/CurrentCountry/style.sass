@@ -28,6 +28,12 @@
         display: flex
         justify-content: space-between
 
+        .left-section
+            min-height: 70vh
+
+        .right-section
+            min-height: 70vh
+
     .current-country__title
         font-size: 46px
         text-align: center
@@ -40,34 +46,28 @@
         width: 100%
         display: flex
         font-size: 20px
-        margin: 0 0 0 20px
-        div
-            margin: 5px 0
 
         .left-info-section
-            margin: 0 25px 0 0
-            width: 100%
+
+            p
+                margin: 10px 0 0 0
+
+                width: 100%
             .flags
                 display: flex
                 justify-content: space-between
-                align-items: center
 
                 .flag-frame
-                    height: 20vh
+                    width: 60%
                     aspect-ratio: 7/4
 
-                    .flag-img
-                        height: 100%
-                        width: 100%
-
                 .coat-of-arms
-                    margin: 25px
-                    height: 20vh
-                    aspect-ratio: 1/1
+                    width: 20%
+                    aspect-ratio: 1/1.5
 
-                    img
-                        height: 100%
-                        width: auto
+                img
+                    height: 100%
+                    width: 100%
 
             .country-property
                 font-weight: 700
@@ -95,24 +95,48 @@
             color: rgb(53, 6, 23)
 
 @media (min-width: 1150px)
+
+    .flags
+        align-items: center
+
+        .coat-of-arms
+            margin: 25px
+
+    .left-section
+        width: 45%
+
     .right-section
-        width: 54%
-        min-height: 70vh
+        width: 50%
 
         .google-map
             height: 90%
+            margin: 0
+
+@media ( min-width: 751px )and ( max-width: 1149px )
+
+    .flags
+
+        .coat-of-arms
+            margin: 25px
 
 @media (max-width: 750px)
+
+    .flags
+        flex-direction: column
+        align-items: flex-start
+
+        .flag-frame
+            margin: 10px auto
+
+        .coat-of-arms
+            margin: 10px auto
+
+@media (max-width: 1149px)
     .sections
         flex-direction: column
 
-    .left-section
-        width: 40%
-        min-height: 70vh
-
     .right-section
-        width: 54%
-        min-height: 70vh
 
         .google-map
-            height: 90vh
+            margin: 25px 0 0 0
+            height: 75vh
