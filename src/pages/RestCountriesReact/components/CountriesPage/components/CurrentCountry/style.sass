@@ -28,17 +28,6 @@
         display: flex
         justify-content: space-between
 
-    .left-section
-        width: 40%
-        min-height: 70vh
-
-    .right-section
-        width: 54%
-        min-height: 70vh
-
-        .google-map
-            height: 90%
-
     .current-country__title
         font-size: 46px
         text-align: center
@@ -105,6 +94,14 @@
         &:hover
             color: rgb(53, 6, 23)
 
+@media (min-width: 1150px)
+    .right-section
+        width: 54%
+        min-height: 70vh
+
+        .google-map
+            height: 90%
+
 @media (max-width: 750px)
     .sections
         flex-direction: column
@@ -112,3 +109,10 @@
     .left-section
         width: 40%
         min-height: 70vh
+
+    .right-section
+        width: 54%
+        min-height: 70vh
+
+        .google-map
+            height: 90vh
