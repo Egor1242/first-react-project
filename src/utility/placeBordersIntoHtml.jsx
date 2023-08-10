@@ -1,4 +1,4 @@
-import { fromCca3ToText } from "./fromCca3ToText.jsx";
+import { fromCca3ToText } from "./fromCca3ToText.js";
 
 export const placeBordersIntoHtml = (bordersArray, countries) => {
 
