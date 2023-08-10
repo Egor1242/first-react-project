@@ -34,53 +34,56 @@ export const CurrentCountry = () => {
                             <div className="left-info-section">
                                 <div className="flags">
                                     <div className="flag-frame">
-                                        <img className="flag-img" alt="" src={currentCountryData?.flags?.png}></img>
+                                        <img alt="" src={currentCountryData?.flags?.png}></img>
                                     </div>
-                                    <div className="coat-of-arms">
-                                        {
-                                            currentCountryData?.coatOfArms &&
+                                    {
+                                        typeof currentCountryData?.coatOfArms == "object" &&
+                                        Object?.values(currentCountryData?.coatOfArms)?.length > 0 &&
+                                        <div className="coat-of-arms">
+                                            {
                                                 Object.values(currentCountryData?.coatOfArms)?.length > 0 ?
-                                                <img className="coat-img" alt="" src={currentCountryData?.coatOfArms?.png}></img> :
-                                                ""
-                                        }
-                                    </div>
+                                                    <img alt="" src={currentCountryData?.coatOfArms?.png}></img> :
+                                                    ""
+                                            }
+                                        </div>
+                                    }
                                 </div>
-                                <div>
+                                <p>
                                     <span className="country-property">Capital:</span> {currentCountryData?.capital || "-"}
-                                </div>
-                                <div>
-                                <span className="country-property">Area:</span> {currentCountryData?.area} <span className="km-square">km</span>
-                                </div>
-                                <div>
-                                <span className="country-property">Population:</span> {currentCountryData?.population} citizens.
-                                </div>
-                                <div>
-                                <span className="country-property">Languages:</span> {placeLanguagesIntoHtml(currentCountryData?.languages)}
-                                </div>
-                                <div>
-                                <span className="country-property">Currencies:</span> {placeCurrenciesIntoHtml(currentCountryData?.currencies) || "-"}
-                                </div>
-                                <div>
-                                <span className="country-property">Timezone:</span> {currentCountryData?.timezones.length > 0 && currentCountryData?.timezones[0]}
-                                </div>
-                                <div>
-                                <span className="country-property">Independence:</span> {currentCountryData?.independent ? "Independent" : "Dependent"}
-                                </div>
-                                <div>
-                                <span className="country-property">Borders:</span> {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
-                                </div>
-                                <div>
-                                <span className="country-property">Continents:</span> {placeContinentsIntoHtml(currentCountryData?.continents)}
-                                </div>
+                                </p>
+                                <p>
+                                    <span className="country-property">Area:</span> {currentCountryData?.area} <span className="km-square">km</span>
+                                </p>
+                                <p>
+                                    <span className="country-property">Population:</span> {currentCountryData?.population} citizens.
+                                </p>
+                                <p>
+                                    <span className="country-property">Languages:</span> {placeLanguagesIntoHtml(currentCountryData?.languages)}
+                                </p>
+                                <p>
+                                    <span className="country-property">Currencies:</span> {placeCurrenciesIntoHtml(currentCountryData?.currencies) || "-"}
+                                </p>
+                                <p>
+                                    <span className="country-property">Timezone:</span> {currentCountryData?.timezones.length > 0 && currentCountryData?.timezones[0]}
+                                </p>
+                                <p>
+                                    <span className="country-property">Independence:</span> {currentCountryData?.independent ? "Independent" : "Dependent"}
+                                </p>
+                                <p>
+                                    <span className="country-property">Borders:</span> {placeBordersIntoHtml(currentCountryData?.borders, countryList)}
+                                </p>
+                                <p>
+                                    <span className="country-property">Continents:</span> {placeContinentsIntoHtml(currentCountryData?.continents)}
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div className="right-section">
                         <div className="google-map">
                             <GoogleMapCustom currentZoom={setZoomScale(currentCountryData?.area)} currentCenter={currentCountryData?.latlng} />
-                            <div className="open-street-maps">
-                                OpenStreetMaps: <span><a href={`${currentCountryData?.maps?.openStreetMaps}` }>{currentCountryData?.maps?.openStreetMaps}</a></span>
-                            </div>
+                        </div>
+                        <div className="open-street-maps">
+                            OpenStreetMaps: <span><a href={`${currentCountryData?.maps?.openStreetMaps}`}>{currentCountryData?.maps?.openStreetMaps}</a></span>
                         </div>
                     </div>
                 </div>
