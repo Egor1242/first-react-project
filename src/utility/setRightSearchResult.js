@@ -13,8 +13,14 @@ export const setRightSearchResult = (countryList, currentSearchResult) => {
             return country?.data?.name?.official?.toLowerCase()?.includes(currentSearchResult?.toLowerCase())
         }
     )
+    let countryListCapitalIncludes = countryList.filter(
+        (country) => {
+            return country?.data?.capital?.[0]?.toLowerCase()?.includes(currentSearchResult?.toLowerCase())
+        }
+    )
+    
 
-    resultCountryList = [...new Set([...countryListStartsWith,...countryListIncludes])]
+    resultCountryList = [...new Set([...countryListStartsWith,...countryListIncludes, ...countryListCapitalIncludes])]
 
     return resultCountryList;
 }

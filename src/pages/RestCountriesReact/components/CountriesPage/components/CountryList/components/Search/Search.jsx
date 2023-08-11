@@ -7,7 +7,7 @@ export const Search = ({ currentSearchResult, setCurrentSearchResult }) => {
             <input
                 value={currentSearchResult}
                 onChange={(event) => setCurrentSearchResult(event.target.value)}
-                placeholder="Введите название страны, которую ищете"
+                placeholder="Введите название страны\столицы, которую ищете"
             />
         </div>
     )

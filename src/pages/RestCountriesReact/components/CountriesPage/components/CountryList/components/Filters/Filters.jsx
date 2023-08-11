@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { filtersConstants } from '../../../../../../../../constants/filtersConstants';
+
 import Slider from '@mui/material/Slider';
 
 import "./style.sass"
@@ -54,6 +56,52 @@ export const Filters = () => {
                     </div>
                 </div>
             </div>
+            <div className='car-side-filter'>
+                <div className='radio'>
+                    Car-side: {
+                        filtersConstants?.carSide.map(
+                            side =>
+                                <div>
+                                    <input defaultChecked id={"carSide" + side} type="radio" value={side} name="car-side" />
+                                    <label htmlFor={"carSide" + side}>{side}</label>
+                                </div>
+                        )
+                    }
+                </div>
+            </div>
+            <div className='continents-filter'>
+                <div className='checkbox'>
+                    <div className="checkbox-title">
+                        Continents:
+                    </div>
+                    <div className="checkboxes">
+                        {
+                            filtersConstants?.continents?.map(
+                                continent =>
+                                    <div>
+                                        <input id={continent?.en} type="checkbox" value={continent?.en} name="continents" />
+                                        <label htmlFor={continent?.en}>{continent?.ru}</label>
+                                    </div>
+
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+            <div className='landlocked-filter'>
+                <div className='radio'>
+                    Landlocked: {
+                        filtersConstants?.landlocked.map(
+                            side =>
+                                <div>
+                                    <input defaultChecked id={"landlocked" + side} type="radio" value={side} name="landlocked" />
+                                    <label htmlFor={"landlocked" + side}>{side}</label>
+                                </div>
+                        )
+                    }
+                </div>
+            </div>
+
         </div>
     )
 }

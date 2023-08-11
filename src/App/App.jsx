@@ -1,5 +1,5 @@
 import { React } from "react"
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 import { RestCountriesReact } from '../pages/RestCountriesReact/RestCountriesReact';
 import { CountryList } from "../pages/RestCountriesReact/components/CountriesPage/components/CountryList"
@@ -11,6 +11,10 @@ import './App.sass';
 
 
 const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <Navigate to="/first-react-project" />
+  },
   {
     path: "/first-react-project",
     element: <RestCountriesReact />,
