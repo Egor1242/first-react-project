@@ -1,25 +1,43 @@
+import { useState } from "react";
+
+import { colorConstants } from "../../../../../../../../constants/colorConstants";
+
+import "./style.sass"
+
 export const ColorChange = () => {
+
+    const [currentColor, setCurrentColor] = useState(
+        {
+            color: colorConstants[0],
+            number: 0
+        }
+    )
+
+    const currentCountryElement = document.querySelector(".current-country");
+
+    if (currentCountryElement) {
+        currentCountryElement.style.backgroundColor = currentColor.color.backgroundColor;
+        currentCountryElement.style.color = currentColor.color.color;
+    }
+   
     return (
         <div className="color-setup">
             <button className="color-1" onClick={
                 () => {
-                    document.querySelector(".current-country").style.backgroundColor = "rgba(250, 184, 114, 0.862)";
-                    document.querySelector(".current-country").style.color = "black";
-
+                    if (currentColor?.number < colorConstants.length - 1) {
+                        setCurrentColor({
+                            color: colorConstants[currentColor?.number + 1],
+                            number: currentColor?.number + 1
+                        })
+                    }
+                    else {
+                        setCurrentColor({
+                            color: colorConstants[0],
+                            number: 0
+                        })
+                    }
                 }
             }></button>
-            <button className="color-2" onClick={
-                () => {
-                    document.querySelector(".current-country").style.backgroundColor = "rgba(48, 40, 88, 0.862)"
-                    document.querySelector(".current-country").style.color = "white";
-                }
-            }></button>
-            <button className="color-3" onClick={
-                () => {
-                    document.querySelector(".current-country").style.backgroundColor = "rgba(4, 126, 124, 0.862)"
-                    document.querySelector(".current-country").style.color = "white";
-                }
-            }></button>
-        </div>
+        </div >
     )
 }
