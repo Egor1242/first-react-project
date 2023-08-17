@@ -80,7 +80,7 @@ export const CurrentCountry = () => {
                     </div>
                     <div className="right-section">
                         <div className="google-map">
-                            <GoogleMapCustom currentZoom={setZoomScale(currentCountryData?.area)} currentCenter={currentCountryData?.latlng} />
+                            <GoogleMapCustom currentZoom={setZoomScale(currentCountryData?.area)} currentCenter={currentCountryData?.capitalInfo?.latlng} />
                         </div>
                         <div className="open-street-maps">
                             OpenStreetMaps: <span><a href={`${currentCountryData?.maps?.openStreetMaps}`}>{currentCountryData?.maps?.openStreetMaps}</a></span>
