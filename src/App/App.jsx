@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           ]
         },
         // {
-        //     path:"first-react-project/aboutUs",
+        //     path:"aboutUs",
         //     element: <AboutUS/>
         // }
       ]
@@ -53,5 +53,4 @@ export function App() {
       <RouterProvider router={router} />
     </div>
   )
-
 }
