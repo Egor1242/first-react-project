@@ -13,15 +13,14 @@ export const placeBordersIntoHtml = (bordersArray, countries) => {
             "." : ", ";
 
         let elem =
-            <>
+            <span key={bordersArray[i]}>
                 <a
-                    key={bordersArray[i]}
                     href={`${bordersArray[i]}`}
                     className="retranslator"
                 >
                     {textBordersArray[i]}
                 </a>{symbol}
-            </>;
+            </span>;
 
         result.push(elem);
     }

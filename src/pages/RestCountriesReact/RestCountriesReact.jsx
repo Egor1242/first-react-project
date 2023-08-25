@@ -1,9 +1,12 @@
 import { React, useEffect, useState, createContext } from "react"
-import {Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { menus } from "../../constants/menus"
 import { ApiConnect } from "../../services/ApiConnect"
 
-import { Header } from "../../components/Header"
+import { Header } from "./components/Header"
+import { DropDownHeader } from "./components/DropDownHeader";
+
+import "./styles.sass"
 
 export const CountryListContext = createContext([])
 
@@ -24,9 +27,10 @@ export const RestCountriesReact = () => {
     return (
         <div className="rest-countries">
             <Header headers={menus} />
+            <DropDownHeader headers={menus} />
 
             <CountryListContext.Provider value={countryList}>
-                <Outlet/>
+                <Outlet />
             </CountryListContext.Provider>
         </div>
     );

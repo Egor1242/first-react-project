@@ -16,23 +16,19 @@ export const CountryList = () => {
 
     let searchedCountryList = setRightSearchResult(countryList, currentSearchResult);
 
-    let timezones = []
-    countryList.map(
-    country => timezones.push(...country?.data?.continents)        
-    )
-
-    console.log([...new Set(timezones)])
-
     console.log(countryList)
 
-    return (<>
-        <Search currentSearchResult={currentSearchResult} setCurrentSearchResult={setCurrentSearchResult} />
-        <div className="filter">
-            <Filters />
-        </div>
-        <div className="country-list">
-            {searchedCountryList?.map((country, index) => <Country key={index} country={country} />)}
-        </div>
-    </>
+    return (
+        <>
+            <Search currentSearchResult={currentSearchResult} setCurrentSearchResult={setCurrentSearchResult} />
+            <div className="filter">
+                <Filters />
+            </div>
+            <div className="country-list">
+                {
+                    searchedCountryList?.map((country, index) => <Country key={index} country={country} />)
+                }
+            </div>
+        </>
     )
 }

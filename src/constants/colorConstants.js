@@ -8,7 +8,7 @@ export const colorConstants = [
         color: "white"
     },
     {
-        backgroundColor: "rgba(4, 126, 124, 0.862)",
+        backgroundColor: "rgba(1, 126, 124, 0.862)",
         color: "white"
-    },
+    }
 ]
