@@ -65,5 +65,6 @@ export const filtersConstants = {
         },
         
     ],
-    landlocked:["yes", "no", "both"]
+    landlocked:["yes", "no", "both"],
+    dependence : ['independent', 'dependent', "both"]
 }

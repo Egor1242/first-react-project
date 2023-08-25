@@ -1,6 +1,6 @@
 import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
-import { placeTimezonesIntoHtml } from "../../../../../../../../utility/placeTimezonesIntoHtml"
+import { placeContinentsIntoHtml } from "../../../../../../../../utility/placeContinentsIntoHtml"
 
 import "./style.sass"
 
@@ -35,7 +35,7 @@ export const Country = ({ country }) => {
                 <span className="country-property">Currencies:</span> <span>{placeCurrenciesIntoHtml(countryData?.currencies) || "-"}</span>
                 </div>
                 <div>
-                <span className="country-property">Timezone:</span> <span>{placeTimezonesIntoHtml(countryData?.timezones) || "-"}</span>
+                <span className="country-property">Continents:</span> <span>{placeContinentsIntoHtml(countryData?.continents) || "-"}</span>
                 </div>
                 <div>
                 <span className="country-property">Independence:</span> <span>{countryData?.independent ? "Independent" : "Dependent"}</span>
