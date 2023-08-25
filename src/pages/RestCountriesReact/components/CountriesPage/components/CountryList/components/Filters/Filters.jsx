@@ -69,6 +69,19 @@ export const Filters = () => {
                     }
                 </div>
             </div>
+            <div className='landlocked-filter'>
+                <div className='radio'>
+                    Landlocked: {
+                        filtersConstants?.landlocked.map(
+                            side =>
+                                <div>
+                                    <input defaultChecked id={"landlocked" + side} type="radio" value={side} name="landlocked" />
+                                    <label htmlFor={"landlocked" + side}>{side}</label>
+                                </div>
+                        )
+                    }
+                </div>
+            </div>
             <div className='continents-filter'>
                 <div className='checkbox'>
                     <div className="checkbox-title">
@@ -88,19 +101,7 @@ export const Filters = () => {
                     </div>
                 </div>
             </div>
-            <div className='landlocked-filter'>
-                <div className='radio'>
-                    Landlocked: {
-                        filtersConstants?.landlocked.map(
-                            side =>
-                                <div>
-                                    <input defaultChecked id={"landlocked" + side} type="radio" value={side} name="landlocked" />
-                                    <label htmlFor={"landlocked" + side}>{side}</label>
-                                </div>
-                        )
-                    }
-                </div>
-            </div>
+
 
         </div>
     )
