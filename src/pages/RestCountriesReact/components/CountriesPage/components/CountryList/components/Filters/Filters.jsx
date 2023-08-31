@@ -3,28 +3,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { filtersConstants } from '../../../../../../../../constants/filtersConstants';
 
-
 import Slider from '@mui/material/Slider';
 
 import "./style.sass"
 
-export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
-
-    const [currentFilterValues, setCurrentFilterValues] = useState({
-        carSide: "both",
-        continents: [],
-        landlocked:"both",
-        independence : "both"
-    }
-    )
-
-
-
-    const [currentAreaFilterValue, setCurrentAreaFilterValue] = useState([0, 17098242]);
-    let [areaMin, areaMax] = currentAreaFilterValue;
-
+export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
     const [filterBlockHidden, setFilterBlockHidden] = useState(true);
-
     let filterBlockELement = document.querySelector(".filter-block")
 
     if (filterBlockELement) {
@@ -40,39 +24,26 @@ export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
     return (
         <div className='filter'>
             <div className="filter-block filter-block__wrapped">
-                <div className='area-filter'>
-                    <div className='filter-label'>Area(км²): </div>
-                    <input
-                        value={areaMin}
-                        onChange={(event) => setCurrentAreaFilterValue([event.target.value, areaMax])}
-                    >
-
-                    </input>
-                    <Slider
-                        className='slider'
-                        getAriaLabel={() => 'Area range'}
-                        value={currentAreaFilterValue}
-                        min={1}
-                        max={17098242}
-                        onChange={(event) => setCurrentAreaFilterValue(event.target.value)}
-                        valueLabelDisplay="auto"
-                    />
-                    <input
-                        value={areaMax}
-                        onChange={(event) => setCurrentAreaFilterValue([areaMin, event.target.value])}
-                    >
-
-                    </input>
-                </div>
                 <div className='dependence-filter'>
                     <div className='radio'>
                         Dependence \ Independence:
                         {
-                            filtersConstants?.dependence.map(
+                            filtersConstants?.independent.map(
                                 value =>
-                                    <div>
-                                        <input id={"dependence" + value} type="radio" value={value} name="dependence" />
-                                        <label htmlFor={"dependence" + value}>{value}</label>
+                                    <div key={value}>
+                                        <input
+                                            onChange={
+                                                () => {
+                                                    let newFilterResult = currentFilterValues;
+                                                    newFilterResult.independent = value;
+                                                    setCurrentFilterValues(newFilterResult);
+                                                }
+                                            }
+                                            defaultChecked={value === currentFilterValues.independent ? true : undefined}
+                                            id={value}
+                                            type="radio"
+                                            name="dependence" />
+                                        <label htmlFor={value}>{value}</label>
                                     </div>
                             )
                         }
@@ -85,7 +56,18 @@ export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
                             filtersConstants?.carSide.map(
                                 side =>
                                     <div>
-                                        <input id={"carSide" + side} type="radio" value={side} name="car-side" />
+                                        <input
+                                            id={"carSide" + side}
+                                            type="radio"
+                                            onChange={
+                                                () => {
+                                                    let newFilterResult = currentFilterValues;
+                                                    newFilterResult.carSide = side;
+                                                    setCurrentFilterValues(newFilterResult);
+                                                }
+                                            }
+                                            defaultChecked={side === currentFilterValues.carSide ? true : undefined}
+                                            name="car-side" />
                                         <label htmlFor={"carSide" + side}>{side}</label>
                                     </div>
                             )
@@ -96,10 +78,23 @@ export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
                     <div className='radio'>
                         Landlocked: {
                             filtersConstants?.landlocked.map(
-                                side =>
+                                value =>
                                     <div>
-                                        <input id={"landlocked" + side} type="radio" value={side} name="landlocked" />
-                                        <label htmlFor={"landlocked" + side}>{side}</label>
+                                        <input
+                                            id={"landlocked" + value}
+                                            type="radio"
+                                            onChange={
+                                                (e) => {
+                                                    let newFilterResult = currentFilterValues;
+                                                    newFilterResult.landlocked = value;
+                                                    setCurrentFilterValues(newFilterResult);
+                                                }
+                                            }
+                                            defaultChecked={value === currentFilterValues.landlocked ? true : undefined}
+                                            name="landlocked" />
+                                        <label htmlFor={"landlocked" + value}>
+                                            {value == "true" ? "yes" : value == "false" ? "no" : "both"}
+                                        </label>
                                     </div>
                             )
                         }
@@ -115,7 +110,23 @@ export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
                                 filtersConstants?.continents?.map(
                                     continent =>
                                         <div>
-                                            <input id={continent?.en} type="checkbox" value={continent?.en} name="continents" />
+                                            <input
+                                                id={continent?.en}
+                                                type="checkbox"
+                                                onChange={
+                                                    (e) => {
+                                                        let newFilterResult = currentFilterValues;
+                                                        if (e.target.checked) {
+                                                            newFilterResult.continents.push(continent?.en)
+                                                        }
+                                                        else {
+                                                            newFilterResult.continents.filter((curContinent) => curContinent != continent?.en)
+                                                        }
+                                                        setCurrentFilterValues(newFilterResult);
+                                                    }
+                                                }
+                                                checked={currentFilterValues.continents.includes(continent?.en) ? true : undefined}
+                                                name="continents" />
                                             <label htmlFor={continent?.en}>{continent?.ru}</label>
                                         </div>
 
@@ -126,8 +137,7 @@ export const Filters = ({ currentFilterResult, setCurrentFilterResult }) => {
                 </div>
 
             </div>
-            <div
-                className="filter-switcher"
+            <div className="filter-switcher"
                 onClick={() => setFilterBlockHidden(!filterBlockHidden)}
             >
                 Filters <ArrowDropDownIcon />

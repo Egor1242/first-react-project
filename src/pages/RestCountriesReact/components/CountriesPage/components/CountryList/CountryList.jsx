@@ -15,10 +15,16 @@ export const CountryList = () => {
     const countryList = useContext(CountryListContext);
 
     const [currentSearchResult, setCurrentSearchResult] = useState("");
-    const [currentFilterResult, setCurrentFilterResult] = useState({});
+    const [currentFilterValues, setCurrentFilterValues] = useState({
+        carSide: "both",
+        continents: ['Africa', "North America"],
+        landlocked: "both",
+        independent: "both"
+    }
+    )
 
     let searchedCountryList = setRightSearchResult(countryList, currentSearchResult);
-     searchedCountryList = setRightFilterResult(searchedCountryList, currentFilterResult);
+    searchedCountryList = setRightFilterResult(searchedCountryList, currentFilterValues);
 
     console.log(countryList)
 
@@ -30,7 +36,7 @@ export const CountryList = () => {
                 setCurrentSearchResult={setCurrentSearchResult}
             />
 
-            <Filters currentFilterResult={currentFilterResult} setCurrentFilterResult={setCurrentFilterResult} />
+            <Filters currentFilterValues={currentFilterValues} setCurrentFilterValues={setCurrentFilterValues} />
 
             <div className="country-list">
                 {
