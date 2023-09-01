@@ -1,4 +1,5 @@
 import * as React from "react";
+import {Link} from "react-router-dom"
 
 import "./style.sass";
 
@@ -9,9 +10,9 @@ export function Header({ headers }) {
                 headers?.map((header, index) => {
                     return (
                         <div key={index} className="header">
-                            <a href={`/${header[0]}`} >
+                            <Link to={`/${header[0]}`} >
                                 {header[1]}
-                            </a>
+                            </Link>
                         </div>
                     )
                 })

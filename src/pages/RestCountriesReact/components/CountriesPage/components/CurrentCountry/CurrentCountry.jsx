@@ -1,14 +1,16 @@
+import { useParams } from "react-router-dom"
+import { useContext } from "react";
+
+import { CountryListContext } from "../../../../RestCountriesReact"
+
 import { placeLanguagesIntoHtml } from "../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../utility/placeCurrenciesIntoHtml"
 import { placeBordersIntoHtml } from "../../../../../../utility/placeBordersIntoHtml"
 import { placeContinentsIntoHtml } from "../../../../../../utility/placeContinentsIntoHtml"
-import { setZoomScale } from "../../../../../../utility/setZoomScale"
-import { useParams } from "react-router-dom"
-import { useContext } from "react";
-import { CountryListContext } from "../../../../RestCountriesReact"
-
 import { GoogleMapCustom } from "../../../../../../components/GoogleMap"
-import { ColorChange } from "./components/ColorChange/ColorChange"
+import { ColorChange } from "./components/ColorChange"
+
+import { setZoomScale } from "../../../../../../utility/setZoomScale"
 
 import "./style.sass"
 

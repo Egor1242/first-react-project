@@ -1,1 +1,3 @@
-export const menus = [["first-react-project/", "Главная"], ["first-react-project/countries/all", "Страны"], ["first-react-project/aboutUs", "О нас"]];
+import { Routes } from "../router"
+
+export const menus = [[Routes.Home, "Главная"], [Routes.Countries, "Страны"], [Routes.AboutUs, "О нас"]];

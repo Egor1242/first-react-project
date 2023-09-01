@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import { Routes } from "../router"
+
 import { fromCca3ToText } from "./fromCca3ToText.js";
 
 export const placeBordersIntoHtml = (bordersArray, countries) => {
@@ -14,12 +17,12 @@ export const placeBordersIntoHtml = (bordersArray, countries) => {
 
         let elem =
             <span key={bordersArray[i]}>
-                <a
-                    href={`${bordersArray[i]}`}
+                <Link
+                    to={`${Routes.CurrentCountry(bordersArray[i])}`}
                     className="retranslator"
                 >
                     {textBordersArray[i]}
-                </a>{symbol}
+                </Link>{symbol}
             </span>;
 
         result.push(elem);

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+import { Routes } from "../../../../../../../../router"
+
 import { placeLanguagesIntoHtml } from "../../../../../../../../utility/placeLanguagesIntoHtml"
 import { placeCurrenciesIntoHtml } from "../../../../../../../../utility/placeCurrenciesIntoHtml"
 import { placeContinentsIntoHtml } from "../../../../../../../../utility/placeContinentsIntoHtml"
@@ -11,9 +14,9 @@ export const Country = ({ country }) => {
     return (
         <div className="country">
             <div className="country__title">
-                <a href={`${country.id}`}>
+                <Link to={`${Routes.CurrentCountry(country.id)}`}>
                     {countryData?.name?.official}
-                </a>
+                </Link>
             </div>
             <div className="flag">
                 <img className="flag-img" alt="" src={countryData?.flags?.png}></img>
@@ -23,22 +26,22 @@ export const Country = ({ country }) => {
                     <span className="country-property">Capital:</span> {countryData?.capital || "-"}
                 </div>
                 <div>
-                <span className="country-property">Area:</span> {countryData?.area} <span className="km-square">km</span>
+                    <span className="country-property">Area:</span> {countryData?.area} <span className="km-square">km</span>
                 </div>
                 <div>
                     <span className="country-property">Population:</span> {countryData?.population} citizens.
                 </div>
                 <div>
-                <span className="country-property">Languages:</span> <span>{placeLanguagesIntoHtml(countryData?.languages) || "-"}</span>
+                    <span className="country-property">Languages:</span> <span>{placeLanguagesIntoHtml(countryData?.languages) || "-"}</span>
                 </div>
                 <div>
-                <span className="country-property">Currencies:</span> <span>{placeCurrenciesIntoHtml(countryData?.currencies) || "-"}</span>
+                    <span className="country-property">Currencies:</span> <span>{placeCurrenciesIntoHtml(countryData?.currencies) || "-"}</span>
                 </div>
                 <div>
-                <span className="country-property">Continents:</span> <span>{placeContinentsIntoHtml(countryData?.continents) || "-"}</span>
+                    <span className="country-property">Continents:</span> <span>{placeContinentsIntoHtml(countryData?.continents) || "-"}</span>
                 </div>
                 <div>
-                <span className="country-property">Independence:</span> <span>{countryData?.independent ? "Independent" : "Dependent"}</span>
+                    <span className="country-property">Independence:</span> <span>{countryData?.independent ? "Independent" : "Dependent"}</span>
                 </div>
             </div>
         </div>
