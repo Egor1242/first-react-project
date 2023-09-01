@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 
+import { filtersConstants } from '../../../../../../constants/filtersConstants';
 import { CountryListContext } from "../../../../RestCountriesReact"
 import { setRightSearchResult } from "../../../../../../utility/setRightSearchResult";
 import { setRightFilterResult } from "../../../../../../utility/setRightFilterResult";
@@ -17,7 +18,13 @@ export const CountryList = () => {
     const [currentSearchResult, setCurrentSearchResult] = useState("");
     const [currentFilterValues, setCurrentFilterValues] = useState({
         carSide: "both",
-        continents: ['Africa', "North America"],
+        continents: [
+            ...filtersConstants
+                ?.continents
+                ?.map(
+                    continent => continent?.en
+                )
+        ],
         landlocked: "both",
         independent: "both"
     }
@@ -26,8 +33,7 @@ export const CountryList = () => {
     let searchedCountryList = setRightSearchResult(countryList, currentSearchResult);
     searchedCountryList = setRightFilterResult(searchedCountryList, currentFilterValues);
 
-    console.log(countryList)
-
+    console.log(searchedCountryList)
 
     return (
         <>

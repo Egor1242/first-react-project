@@ -56,15 +56,10 @@ export const filtersConstants = {
             ru: "Азия"
         },
         {
-            en:"Antarctica",
-            ru:"Антарктида"
+            en: "Antarctica",
+            ru: "Антарктида"
         },
-        {
-            en: "All",
-            ru: "Все"
-        },
-        
     ],
-    landlocked:["true", "false", "both"],
-    independent : ['true', 'false', "both"]
+    landlocked: [true, false, "both"],
+    independent: [true, false, "both"]
 }
