@@ -132,35 +132,7 @@ export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
                                         </div>
                                 )
                             }
-                            <div>
-                                <input
-                                    id="continents-all"
-                                    type="checkbox"
-                                    defaultChecked
-                                    onChange={
-                                        (e) => {
-                                            let newFilterResult = Object.assign({}, currentFilterValues);
-
-                                            if (e.target.checked) {
-                                                newFilterResult.continents.push(...filtersConstants
-                                                    ?.continents
-                                                    ?.map(
-                                                        continent => continent?.en
-                                                    ))
-                                            }
-                                            else {
-                                                newFilterResult.continents = [null]
-                                            }
-
-                                            setCurrentFilterValues(newFilterResult);
-                                        }
-                                    } />
-                                <label
-                                    htmlFor="continents-all"
-                                >
-                                    All
-                                </label>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

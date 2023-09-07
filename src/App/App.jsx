@@ -6,6 +6,7 @@ import { CountryList } from "../pages/RestCountriesReact/components/CountriesPag
 import { CurrentCountry } from "../pages/RestCountriesReact/components/CountriesPage/components/CurrentCountry";
 import { MainPage } from "../pages/RestCountriesReact/components/MainPage"
 import { CountriesPage } from "../pages/RestCountriesReact/components/CountriesPage"
+import { AboutUs } from "../pages/RestCountriesReact/components/AboutUs";
 
 import './App.sass';
 
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
             }
           ]
         },
-        // {
-        //     path:"aboutUs",
-        //     element: <AboutUS/>
-        // }
+        {
+            path:"aboutUs",
+            element: <AboutUs/>
+        }
       ]
   }
 ]);

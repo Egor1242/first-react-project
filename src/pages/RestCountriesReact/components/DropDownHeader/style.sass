@@ -1,13 +1,15 @@
 .drop-down
     height: 50px
     width: 50px
+    position: fixed
+    z-index: 10
 
     .header-switcher
         height: 50px
         width: 50px
         position: absolute
         top: 10px
-        left: 15px
+        left: 10px
         z-index: 100
 
         svg
@@ -27,16 +29,18 @@
         backdrop-filter: blur(10px)
         transform: translate(-100%)
 
+        a
+            text-decoration: none
+            cursor: pointer
+            color: white
 
         .header-menu__item
             width: 100%
             margin-top: 20px
-            font-size: 27px
+            font-size: 35px
             text-align: center
             border: .5px solid grey
             background: brown
 
-            a
-                text-decoration: none
-                cursor: pointer
-                color: white
+            &:hover
+                background: rgba(201, 74, 63, 0.791)

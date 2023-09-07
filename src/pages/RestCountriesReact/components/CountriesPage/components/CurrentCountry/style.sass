@@ -48,23 +48,15 @@
         font-size: 20px
 
         .left-info-section
+            width: 100%
 
             p
                 margin: 10px 0 0 0
 
-                width: 100%
             .flags
                 display: flex
                 justify-content: space-around
                 align-items: center
-
-                .flag-frame
-                    height: 60%
-                    aspect-ratio: 7/4
-
-                .coat-of-arms
-                    width: 20%
-                    aspect-ratio: 1/1.5
 
                 img
                     height: 100%
@@ -100,8 +92,13 @@
     .flags
         align-items: center
 
+        .flag-frame
+            margin: 10px auto
+            width: 50%
+
         .coat-of-arms
-            margin: 25px
+            margin: 10px auto
+            width: 45%
 
     .left-section
         width: 45%
@@ -117,16 +114,15 @@
 
     .flags
 
+        .flag-frame
+            width: 50%
+
         .coat-of-arms
-            margin: 25px
+            width: 35%
 
-    .flag-frame
-        height: 20vh
-        aspect-ratio: 7/4
-
-        .flag-img
-            height: 100%
-            width: 100%
+            .flag-img
+                height: 100%
+                width: 100%
 
 
 @media (max-width: 750px)
@@ -138,9 +134,11 @@
 
         .flag-frame
             margin: 10px auto
+            width: 80%
 
         .coat-of-arms
             margin: 10px auto
+            width: 80%
 
 @media (max-width: 1149px)
     .sections

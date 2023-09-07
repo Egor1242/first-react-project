@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import MenuIcon from '@mui/icons-material/Menu';
@@ -30,19 +31,19 @@ export function DropDownHeader({ headers }) {
                 <MenuIcon />
             </div>
 
-                <div className='header-menu'>
-                    {
-                        headers?.map((header, index) => {
-                            return (
+            <div className='header-menu'>
+                {
+                    headers?.map((header, index) => {
+                        return (
+                            <Link to={`/${header[0]}`} >
                                 <div key={index} className="header-menu__item">
-                                    <a href={`/${header[0]}`} >
-                                        {header[1]}
-                                    </a>
+                                    {header[1]}
                                 </div>
-                            )
-                        })
-                    }
-                </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
