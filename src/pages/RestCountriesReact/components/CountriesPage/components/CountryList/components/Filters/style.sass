@@ -1,7 +1,26 @@
 .filter
-    width: 80%
     margin: 0 auto
     position: relative
+    text-transform: capitalize
+
+    input
+        width: 20px
+        height: 20px
+
+    .filter-element
+        border: 2px solid red
+        background-color: white
+        color: black
+        display: flex
+        align-items: center
+        cursor: pointer
+
+        label
+            cursor: pointer
+
+
+        &:hover
+            background-color: pink
 
     .filter-switcher
         position: absolute
@@ -10,7 +29,6 @@
         display: flex
         align-items: center
 
-        
 .filter-block__wrapped
     visibility: hidden
     height: 0px
@@ -21,43 +39,67 @@
     color: white
     padding: 5px
 
-    .filter-label
-        font-size: 23px
-
-    .area-filter
-        display: flex
-
-        input
-            width: 5.5vw
-            margin: 0 15px
-
-        .slider
-            width: 70%
+    .unit
+        min-width: 100px
 
     .dependence-filter
-        display: flex
-        align-items: center
         padding: 15px 0 10px 0
-
-        .radio
-            display: flex
 
     .car-side-filter
         padding: 0 0 5px 0
-        .radio
-            display: flex
 
     .continents-filter
-
         .checkbox
             display: flex
 
             .checkboxes
-                width: 80%
                 justify-content: space-evenly
                 display: flex
 
     .landlocked-filter
         padding: 0 0 5px 0
-        .radio
-            display: flex
+
+.radio
+    margin-top: 25px
+    display: flex
+    justify-content: space-between
+
+    .value
+        width: 50%
+
+.checkbox
+    margin-top: 25px
+    display: flex
+    justify-content: space-between
+
+    .value
+        width: 50%
+
+@media (min-width: 1150px)
+    .filter
+        width: 80%
+
+    .filter-block
+        font-size: 25px
+
+    .filter-element
+        min-width: 150px
+
+@media ( min-width: 751px )and ( max-width: 1149px )
+    .filter
+        width: 80%
+
+    .filter-element
+        min-width: 150px
+
+@media (min-width: 300px) and (max-width: 750px)
+    .filter
+        width: 100%
+
+@media (max-width: 299px)
+    .filter-block
+        font-size: 18px
+
+@media (max-width: 1149px)
+    .filter-block
+        font-size: 20px
