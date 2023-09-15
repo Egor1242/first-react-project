@@ -42,11 +42,18 @@ export const CountryList = () => {
                 setCurrentSearchResult={setCurrentSearchResult}
             />
 
-            <Filters currentFilterValues={currentFilterValues} setCurrentFilterValues={setCurrentFilterValues} />
+            <Filters
+                currentFilterValues={currentFilterValues}
+                setCurrentFilterValues={setCurrentFilterValues}
+            />
 
             <div className="country-list">
                 {
-                    searchedCountryList?.map((country, index) => <Country key={index} country={country} />)
+                    searchedCountryList.length > 0 ?
+                        searchedCountryList?.map((country, index) => <Country key={index} country={country} />) :
+                        <div className="empty-list-label">
+                            Нет элементов удовлетворяющих ваш запрос...
+                        </div>
                 }
             </div>
         </>
