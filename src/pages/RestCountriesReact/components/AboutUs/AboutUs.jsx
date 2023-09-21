@@ -9,13 +9,13 @@ export const AboutUs = () => {
                     Mail: <a href='mailto:mail@egorwinner12@gmail.com'>egorwinner12@gmail.com</a>
                 </div>
                 <div>
-                    Git: <a href='https://github.com/Egor1242'>github</a>
+                    Git: <a href='https://github.com/Egor1242'>https://github.com/Egor1242</a>
                 </div>
             </div>
             <div>
                 <div className="sources">
                     Sources:
-                    <div><a href='https://restcountries.com'>rest countries</a></div>
+                    <div><a href='https://restcountries.com'>REST countries</a></div>
                     <div className="icon-micons"><a href='https://mui.com/material-ui/material-icons/?query=delete'>material-icons</a></div>
                     <div className="icon-react"><a href='https://ru.legacy.reactjs.org/'>React</a></div>
                     <div className="icon-js"><a href='https://www.javascript.com'>JavaScript</a></div>
