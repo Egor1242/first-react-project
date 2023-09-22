@@ -9,7 +9,7 @@ export const AboutUs = () => {
                     Mail: <a href='mailto:mail@egorwinner12@gmail.com'>egorwinner12@gmail.com</a>
                 </div>
                 <div>
-                    Git: <a href='https://github.com/Egor1242'>github</a>
+                    Git: <a href='https://github.com/Egor1242'>https://github.com/Egor1242</a>
                 </div>
             </div>
             <div>

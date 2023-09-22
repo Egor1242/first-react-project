@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 import { CountryListContext } from "../../../../RestCountriesReact"
 
@@ -9,11 +13,11 @@ import { placeBordersIntoHtml } from "../../../../../../utility/placeBordersInto
 import { placeContinentsIntoHtml } from "../../../../../../utility/placeContinentsIntoHtml"
 import { GoogleMapCustom } from "../../../../../../components/GoogleMap"
 import { ColorChange } from "./components/ColorChange"
+import { Routes } from "../../../../../../router";
 
 import { setZoomScale } from "../../../../../../utility/setZoomScale"
 
 import "./style.sass"
-
 
 export const CurrentCountry = () => {
 
@@ -21,12 +25,44 @@ export const CurrentCountry = () => {
 
     const { currentCountry } = useParams();
 
-    let currentCountryData = countryList?.find(country => country?.id === currentCountry)?.data;
+    let currentNumber = 0
+
+    let currentCountryData = countryList?.find(
+        (country, index) => {
+            if (country?.id === currentCountry) {
+                currentNumber = index;
+                return true;
+            }
+        }
+    )?.data;
+
+    let nextNumber = (currentNumber) => {
+        return currentNumber + 1 < countryList.length ? currentNumber + 1 : 0
+    }
+    let prevNumber = (currentNumber) => {
+        return currentNumber - 1 > 0 ? currentNumber - 1 : countryList.length - 1
+    }
 
     console.log(currentCountryData)
 
     return (
         <>
+            <div className="navigation">
+                <div className="navigation__arrow country-prev">
+                    <Link
+                        to={Routes.CurrentCountry(countryList[nextNumber(currentNumber)]?.id)}
+                    >
+                        <ArrowLeftIcon fontSize="large" />
+                    </Link>
+                </div>
+                <div className="navigation__arrow country-next">
+                    <Link
+                        to={Routes.CurrentCountry(countryList[prevNumber(currentNumber)]?.id)}
+                    >
+                        <ArrowRightIcon fontSize="large" />
+                    </Link>
+                </div>
+            </div>
             <div className="current-country">
                 <ColorChange></ColorChange>
                 <div className="current-country__title">{currentCountryData?.name?.common}</div>
