@@ -37,7 +37,7 @@ export const CurrentCountry = () => {
     )?.data;
 
     let nextNumber = (currentNumber) => {
-        return currentNumber + 1 < countryList.length ? currentNumber + 1 : 0
+        return currentNumber + 1 < countryList.length - 1 ? currentNumber + 1 : 0
     }
     let prevNumber = (currentNumber) => {
         return currentNumber - 1 > 0 ? currentNumber - 1 : countryList.length - 1
@@ -50,14 +50,14 @@ export const CurrentCountry = () => {
             <div className="navigation">
                 <div className="navigation__arrow country-prev">
                     <Link
-                        to={Routes.CurrentCountry(countryList[nextNumber(currentNumber)]?.id)}
+                        to={Routes.CurrentCountry(countryList[prevNumber(currentNumber)]?.id)}
                     >
                         <ArrowLeftIcon fontSize="large" />
                     </Link>
                 </div>
                 <div className="navigation__arrow country-next">
                     <Link
-                        to={Routes.CurrentCountry(countryList[prevNumber(currentNumber)]?.id)}
+                        to={Routes.CurrentCountry(countryList[nextNumber(currentNumber)]?.id)}
                     >
                         <ArrowRightIcon fontSize="large" />
                     </Link>
