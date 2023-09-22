@@ -9,7 +9,7 @@ import { DropDownHeader } from "./components/DropDownHeader";
 
 import "./styles.sass"
 
-export const CountryListContext = createContext([])
+export const CountryListContext = createContext([]);
 
 export const RestCountriesReact = () => {
 
@@ -22,8 +22,7 @@ export const RestCountriesReact = () => {
         );
     }
 
-    useEffect(getResponse, [])
-
+    useEffect(getResponse, []);
 
     return (
         <div className="rest-countries">

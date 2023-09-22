@@ -33,8 +33,6 @@ export const CountryList = () => {
     let searchedCountryList = setRightSearchResult(countryList, currentSearchResult);
     searchedCountryList = setRightFilterResult(searchedCountryList, currentFilterValues);
 
-    console.log(searchedCountryList)
-
     return (
         <>
             <Search

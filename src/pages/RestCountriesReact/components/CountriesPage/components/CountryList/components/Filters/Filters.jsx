@@ -29,8 +29,8 @@ export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
                         <div className='value'>
                             {
                                 filtersConstants?.independent.map(
-                                    value =>
-                                        <div className='filter-element' key={value}>
+                                    (value, index) =>
+                                        <div className='filter-element' key={"independent" + index}>
                                             <input
                                                 onChange={
                                                     () => {
@@ -61,9 +61,8 @@ export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
                         <div className='value'>{
                             filtersConstants?.carSide.map(
                                 side =>
-                                    <div className='filter-element'>
+                                    <div key={"carSide" + side} className='filter-element'>
                                         <input
-                                            id={"carSide" + side}
                                             type="radio"
                                             onChange={
                                                 () => {
@@ -87,8 +86,8 @@ export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
                         <div className='value'>
                             {
                                 filtersConstants?.landlocked.map(
-                                    value =>
-                                        <div className='filter-element'>
+                                    (value, index) =>
+                                        <div className='filter-element' key={"landlocked" + index}>
                                             <input
                                                 id={"landlocked" + value}
                                                 type="radio"
@@ -119,7 +118,7 @@ export const Filters = ({ currentFilterValues, setCurrentFilterValues }) => {
                             {
                                 filtersConstants?.continents?.map(
                                     continent =>
-                                        <div className='filter-element'>
+                                        <div className='filter-element' key={continent?.en}>
                                             <input
                                                 id={continent?.en}
                                                 type="checkbox"

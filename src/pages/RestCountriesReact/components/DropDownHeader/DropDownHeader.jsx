@@ -35,8 +35,8 @@ export function DropDownHeader({ headers }) {
                 {
                     headers?.map((header, index) => {
                         return (
-                            <Link to={`/${header[0]}`} >
-                                <div key={index} className="header-menu__item">
+                            <Link key={index} to={`/${header[0]}`} >
+                                <div className="header-menu__item">
                                     {header[1]}
                                 </div>
                             </Link>

@@ -1,62 +1,45 @@
 .about-us_page
-    padding: 10px 20px
-    width: 85%
-    margin: 7.5vh auto 0 auto
-    padding-top: 30px
-    background-color: rgba(52, 78, 102, 0.8)
+    padding-top: 7.5vh
+
+    .about-us
+        padding: 10px 20px
+        background-color: rgba(52, 78, 102, 0.8)
+        width: 85%
+        margin: 0 auto
 
     .sources
         font-size: 28px
         margin-top: 20px
         padding-bottom: 30px
-        display: flex
-        justify-content: space-between
 
         div
             //margin-top: 30px
 
-        .icon-mui
+        .icon
             position: relative
             &::before
                 content: ''
                 width: 50px
                 height: 50px
                 position: absolute
-                top: 5px
-                left: -60px
+                top: -5px
+                left: -60px 
+
+
+        .icon-mui
+            &::before
                 background: no-repeat url("../../../../img/backgrounds/mui-icon.jpg")
 
         .icon-react
-            position: relative
             &::before
-                content: ''
-                width: 50px
-                height: 50px
-                position: absolute
-                top: 5px
-                left: -60px
                 background: no-repeat url("../../../../img/backgrounds/react-icon.jpg")
 
         .icon-js
-            position: relative
             &::before
-                content: ''
-                width: 50px
-                height: 50px
-                position: absolute
-                top: 5px
-                left: -60px
                 background-image: url("../../../../img/backgrounds/js-icon.jpg")
         
         .icon-html
-            position: relative
             &::before
-                content: ''
-                width: 50px
-                height: 50px
-                position: absolute
-                top: 5px
-                left: -60px
                 background-image: url("../../../../img/backgrounds/html-icon.jpg")
                 
 
@@ -73,3 +56,15 @@
         &:hover
             color: rgb(111, 111, 111)
     
+@media ( min-width: 1100px)
+    .sources
+        display: flex
+        justify-content: space-between
+        align-items: center
+@media ( max-width: 1099px)
+    .sources
+        display: block
+        padding-left: 15vw
+
+        div
+            margin-top: 2.5vh
