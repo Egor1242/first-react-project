@@ -15,8 +15,8 @@ export const AboutUs = () => {
             <div>
                 <div className="sources">
                     Sources:
-                    <div><a href='https://restcountries.com'>REST countries</a></div>
-                    <div className="icon-micons"><a href='https://mui.com/material-ui/material-icons/?query=delete'>material-icons</a></div>
+                    <div><a href='https://restcountries.com'>rest countries</a></div>
+                    <div className="icon-mui"><a href='https://mui.com/material-ui/material-icons/?query=delete'>material-icons</a></div>
                     <div className="icon-react"><a href='https://ru.legacy.reactjs.org/'>React</a></div>
                     <div className="icon-js"><a href='https://www.javascript.com'>JavaScript</a></div>
                     <div className="icon-html"><a href='https://html.com'>HTML</a></div>
